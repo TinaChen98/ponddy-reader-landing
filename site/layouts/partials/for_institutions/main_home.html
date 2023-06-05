@@ -1,0 +1,40 @@
+<section class="hero">
+    <div class="lazyload  desktop ">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-8">
+                    <h1>Ponddy Reader</h1>
+                    <h2>{{.title}}</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center text-center mt-3">
+                <div class="col-md-8 col-lg-8  center-block">
+                    <a class="btn_general-primary" href="#quote_form">
+                        {{.signup_button}}</a>
+                </div>
+            </div>
+            <div class="btn_scrolldown">
+                <div class="btn_scrolldown_click" onclick="setScrollBottomButton()">
+                    <img alt="btn_scrolldown" data-src="/public/images/reader/icon/btn_scrolldown.svg">
+                    <p>{{ .scroll }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <h1>Ponddy Reader</h1>
+                    <h2>{{.title}}</h2>
+                    <p class="description">{{.description}}</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center singup-section">
+                <a class="btn_general-primary" href="#quote_form">
+                    {{.signup_button}}</a>
+            </div>
+        </div>
+    </div>
+</section>

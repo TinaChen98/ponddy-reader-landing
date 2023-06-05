@@ -1,0 +1,42 @@
+<div class="modal fade" id="redeemModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+<!--                <h2>{{.title}}</h2>-->
+<!--                <h5>{{.subtitle}}</h5>-->
+                <img src="/public/images/reader/icon/icon_redeemCard.svg" alt="redeem">
+                <div class="close" data-dismiss="modal" aria-label="Close"><button>✕</button></div>
+                <!-- <span aria-hidden="true">&times;</span> -->
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center">
+                    <h2>{{.title}}</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <p>{{.description}}
+<!--                        ,<br> pageshih@ponddy-edu.com </p>-->
+                </div>
+<!--                <div class="form-group row no-gutters" id="redeem-form">-->
+<!--                    <div class="col-md-12 ">-->
+<!--                        <input type="text" class="form-control" autocomplete="off" maxlength="16" id="code-3">-->
+<!--                    </div>-->
+
+<!--                </div>-->
+            </div>
+            <div class="modal-footer justify-content-center">
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                <div class="col-12 col-md-10" style="display: flex">
+                    <input type="text" class="form-control " autocomplete="off" maxlength="19" placeholder="{{.placeholder}}" id="redeem_input">
+                    <a class="btn-apply" disabled  id="redeem-login">{{.redeem}}</a>
+                </div>
+<!--                <button type="button" class="btn btn-primary" disabled id="redeem">{{.redeem}}</button>-->
+<!--                <a class="btn btn-primary"-->
+<!--                   id="redeem-login"-->
+<!--                   href="https://auth.ponddy.com/auth/?client_id=2ecd2ce4-86a0-4e75-8548-e574d23f5731&redirect_uri=https://reader.ponddy.com/app/&next=%23/subscriptions">-->
+<!--                    {{.register}}-->
+<!--                </a>-->
+            </div>
+        </div>
+    </div>
+</div>

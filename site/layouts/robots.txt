@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /share/
+Allow: /ja/
+Allow: /tw/
+Allow: /pricing/
+Allow: /ja/pricing/
+Allow: /tw/pricing/
+Disallow: /admin/
+
+Sitemap: https://reader.ponddy.com/sitemap.xml

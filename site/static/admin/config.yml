@@ -1,0 +1,1377 @@
+backend:
+  name: git-gateway
+
+media_folder: "site/static/public/images" # Folder where user uploaded files should go
+public_folder: "/public/images"
+
+editor:
+  preview: false
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "pages"
+    label: "Pages"
+    files:           
+      - file: "site/content/_index.en.md"
+        label: "[en] Reade Landing"
+        name: en-landing
+        fields:
+          - label: Site Settings
+            name: site
+            widget: object
+            fields:
+              - label: Title
+                name: title 
+                widget: string
+              - label: Author
+                name: author
+                widget: string
+              - label: Keywords
+                name: keywords
+                widget: string
+              - label: Classification
+                name: classification
+                widget: string
+              - label: Description
+                name: description
+                widget: string
+              - label: Copyright
+                name: copyright
+                widget: string
+              - label: Logo
+                name: logo
+                widget: object
+                fields:
+                - label: Image
+                  name: image
+                  widget: image
+                - label: Title
+                  name: title
+                  widget: string
+                - label: Alt
+                  name: alt
+                  widget: string
+          - label: Header – Menu Links
+            name: header
+            widget: object
+            fields:
+              - label: Site menu
+                name: navbar
+                widget: object
+                fields:
+                  - {label: Home, name: home, widget: string}
+                  - {label: How it Works, name: how_it_works, widget: string}
+                  - {label: Pricing, name: pricing, widget: string}
+                  - {label: Redeem, name: redeem, widget: string}
+              - label: Action menu
+                name: actionbar
+                widget: object
+                fields:
+                  - {label: Sign in, name: signin, widget: string}
+                  - {label: Sign up, name: signup, widget: string}
+                  - {label: Ponddy, name: ponddy, widget: string}
+                  - {label: Dashboard, name: dashboard, widget: string}
+          - label: Main - Site content
+            name: main
+            widget: object
+            fields:
+              - label: Redeem
+                name: redeem
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Subtitle, name: subtitle, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Note, name: note, widget: string}
+                  - {label: Redeem, name: redeem, widget: string}
+                  - {label: register, name: register, widget: string}
+              - label: Website Hero
+                name: hero
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Descriptiopn, name: description, widget: text}
+                  - {label: Create Button - Text, name: create_button, widget: string}
+                  - {label: Pricing Button - Text, name: pricing_button, widget: string}
+                  - {label: Youtube Video Link, name: youtube_embed_link, widget: string}
+              - label: How it Works
+                name: how_it_works
+                widget: object
+                fields:
+                  - label: Gadgets
+                    name: show
+                    widget: object
+                    fields:
+                      - {label: Mac Image, name: mac_image, widget: image}
+                      - {label: iPhone Image, name: iphone_image, widget: image}
+                  - {label: Title, name: title, widget: string}
+                  - labels: Title Images
+                    name: icons
+                    widget: list
+                    fields:
+                      - {label: Icon image, name: url, widget: image}
+                  - {label: Content, name: text, widget: text}
+                  - labels: Feature Icons
+                    name: feature_icons
+                    widget: list
+                    fields:
+                      - {label: Icon image, name: url, widget: image}
+              - label: Tools
+                name: tools
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - label: Wheel
+                    name: wheel
+                    widget: list
+                    fields:
+                      - {label: Icon image, name: url, widget: image}
+                      - {label: Class name, name: class, widget: string}
+                  - label: Features
+                    name: features
+                    widget: list
+                    fields:
+                      - {label: Title, name: title, widget: string}
+                      - {label: Description, name: description, widget: text}
+                      - {label: ID, name: id, widget: string}
+              - label: Vocabulary
+                name: vocabulary
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - label: Key View
+                    name: key_view
+                    widget: list
+                    fields:
+                      - {label: Title, name: title, widget: string}
+                      - {label: Image, name: image, widget: image}
+              - label: Share
+                name: share
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Image, name: image, widget: image}
+              - label: Library
+                name: library
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - label: Example Content
+                    name: example_content
+                    widget: list
+                    fields:
+                      - {label: Link URL, name: link_url, widget: string}
+                      - {label: Image, name: image, widget: image}
+                      - {label: CSS Class, name: class, widget: string}
+              - label: Charts
+                name: charts
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Image, name: image, widget: image}
+              - label: Reviews
+                name: reviews
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - label: Review Entries
+                    name: reviews
+                    widget: list
+                    fields:
+                      - {label: Review Text, name: text, widget: text}
+                      - {label: Reviewer Image, name: image, widget: image}
+                      - {label: School, name: school, widget: string}
+                      - {label: Name, name: name, widget: string}
+                      - {label: Reviewer title, name: title, widget: string}
+              - label: Footer Hero
+                name: footer_hero
+                widget: object
+                fields:
+                  - {label: Background Image, name: background, widget: image}
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Signup Button Text, name: signup_button, widget: string}
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - label: Products (Icons)
+                name: products_icon
+                widget: list
+                fields:
+                  - {label: Image, name: image, widget: image}
+                  - {label: Link URL, name: url, widget: string}
+                  - {label: Alt, name: alt, widget: string}
+              - label: Navigation Links
+                name: navigation
+                widget: list
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Link URL, name: url, widget: string}
+              - {label: Copyright, name: copyright, widget: string}
+              - {label: Topup Arrow, name: topup_arrow, widget: image}
+      - file: "site/content/pricing/_index.en.md"
+        label: "[en] Reader Pricing"
+        name: en-pricing
+        fields:
+          - label: Site Settings
+            name: site
+            widget: object
+            fields:
+              - label: Title
+                name: title 
+                widget: string
+              - label: Author
+                name: author
+                widget: string
+              - label: Keywords
+                name: keywords
+                widget: string
+              - label: Classification
+                name: classification
+                widget: string
+              - label: Description
+                name: description
+                widget: string
+              - label: Copyright
+                name: copyright
+                widget: string
+              - label: Logo
+                name: logo
+                widget: object
+                fields:
+                - label: Image
+                  name: image
+                  widget: image
+                - label: Title
+                  name: title
+                  widget: string
+                - label: Alt
+                  name: alt
+                  widget: string
+          - label: Header – Menu Links
+            name: header
+            widget: object
+            fields:
+              - label: Site menu
+                name: navbar
+                widget: object
+                fields:
+                  - {label: Home, name: home, widget: string}
+                  - {label: How it Works, name: how_it_works, widget: string}
+                  - {label: Pricing, name: pricing, widget: string}
+                  - {label: Redeem, name: redeem, widget: string}
+              - label: Action menu
+                name: actionbar
+                widget: object
+                fields:
+                  - {label: Sign in, name: signin, widget: string}
+                  - {label: Sign up, name: signup, widget: string}
+                  - {label: Ponddy, name: ponddy, widget: string}
+                  - {label: Dashboard, name: dashboard, widget: string}
+          - label: Main - Site content
+            name: main
+            widget: object
+            fields:
+              - label: Redeem
+                name: redeem
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Subtitle, name: subtitle, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Note, name: note, widget: string}
+                  - {label: Redeem, name: redeem, widget: string}
+                  - {label: register, name: register, widget: string}
+              - label: Website Hero
+                name: hero
+                widget: object
+                fields:
+                  - label: Pricing Boxes
+                    name: pricing_boxes
+                    widget: list
+                    fields:
+                      - {label: Title, name: title, widget: string}
+                      - {label: Description, name: description, widget: string}
+                      - {label: Signup Link, name: signup_link, widget: string}
+                      - {label: Signup Button Text, name: button_text, widget: string}
+                      - {label: Type, name: type, widget: string}
+                      - label: Price
+                        name: price
+                        widget: object
+                        fields:
+                          - {label: Currency, name: currency, widget: string, required: false}
+                          - {label: Main Price, name: main, widget: string}
+                          - {label: Extra, name: extra, widget: string, required: false}
+                      - label: Badge
+                        name: badge
+                        widget: object
+                        required: false
+                        fields:
+                          - {label: Line 1, name: line1, widget: string}
+                          - {label: Line 2, name: line2, widget: string}
+              - label: Feature Tables
+                name: features
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - label: Tables
+                    name: tables
+                    widget: list
+                    fields:
+                      - label: Table Head
+                        name: head
+                        widget: list
+                        fields:
+                          - {label: Content, name: content, widget: string}
+                      - label: Table Rows
+                        name: rows
+                        widget: list
+                        fields:
+                          - label: Cells
+                            name: cells
+                            widget: list
+                            fields:
+                              - {label: Content, name: content, widget: string, required: false}
+                              - {label: Image, name: image, widget: image, required: false}
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - label: Products (Icons)
+                name: products_icon
+                widget: list
+                fields:
+                  - {label: Image, name: image, widget: image}
+                  - {label: Link URL, name: url, widget: string}
+                  - {label: Alt, name: alt, widget: string}
+              - label: Navigation Links
+                name: navigation
+                widget: list
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Link URL, name: url, widget: string}
+              - {label: Copyright, name: copyright, widget: string}
+              - {label: Topup Arrow, name: topup_arrow, widget: image}
+      - file: "site/content/_index.ja.md"
+        label: "[ja] Reader Landing"
+        name: ja-landing
+        fields:
+          - label: Site Settings
+            name: site
+            widget: object
+            fields:
+              - label: Title
+                name: title 
+                widget: string
+              - label: Author
+                name: author
+                widget: string
+              - label: Keywords
+                name: keywords
+                widget: string
+              - label: Classification
+                name: classification
+                widget: string
+              - label: Description
+                name: description
+                widget: string
+              - label: Copyright
+                name: copyright
+                widget: string
+              - label: Logo
+                name: logo
+                widget: object
+                fields:
+                - label: Image
+                  name: image
+                  widget: image
+                - label: Title
+                  name: title
+                  widget: string
+                - label: Alt
+                  name: alt
+                  widget: string
+          - label: Header – Menu Links
+            name: header
+            widget: object
+            fields:
+              - label: Site menu
+                name: navbar
+                widget: object
+                fields:
+                  - {label: Home, name: home, widget: string}
+                  - {label: How it Works, name: how_it_works, widget: string}
+                  - {label: Pricing, name: pricing, widget: string}
+                  - {label: Redeem, name: redeem, widget: string}
+              - label: Action menu
+                name: actionbar
+                widget: object
+                fields:
+                  - {label: Sign in, name: signin, widget: string}
+                  - {label: Sign up, name: signup, widget: string}
+                  - {label: Ponddy, name: ponddy, widget: string}
+                  - {label: Dashboard, name: dashboard, widget: string}
+          - label: Main - Site content
+            name: main
+            widget: object
+            fields:
+              - label: Website Hero
+                name: hero
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Descriptiopn, name: description, widget: text}
+                  - {label: Create Button - Text, name: create_button, widget: string}
+                  - {label: Pricing Button - Text, name: pricing_button, widget: string}
+                  - {label: Youtube Video Link, name: youtube_embed_link, widget: string}
+              - label: How it Works
+                name: how_it_works
+                widget: object
+                fields:
+                  - label: Gadgets
+                    name: show
+                    widget: object
+                    fields:
+                      - {label: Mac Image, name: mac_image, widget: image}
+                      - {label: iPhone Image, name: iphone_image, widget: image}
+                  - {label: Title, name: title, widget: string}
+                  - labels: Title Images
+                    name: icons
+                    widget: list
+                    fields:
+                      - {label: Icon image, name: url, widget: image}
+                  - {label: Content, name: text, widget: text}
+                  - labels: Feature Icons
+                    name: feature_icons
+                    widget: list
+                    fields:
+                      - {label: Icon image, name: url, widget: image}
+              - label: Tools
+                name: tools
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - label: Wheel
+                    name: wheel
+                    widget: list
+                    fields:
+                      - {label: Icon image, name: url, widget: image}
+                      - {label: Class name, name: class, widget: string}
+                  - label: Features
+                    name: features
+                    widget: list
+                    fields:
+                      - {label: Title, name: title, widget: string}
+                      - {label: Description, name: description, widget: text}
+                      - {label: ID, name: id, widget: string}
+              - label: Vocabulary
+                name: vocabulary
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - label: Key View
+                    name: key_view
+                    widget: list
+                    fields:
+                      - {label: Title, name: title, widget: string}
+                      - {label: Image, name: image, widget: image}
+              - label: Share
+                name: share
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Image, name: image, widget: image}
+              - label: Library
+                name: library
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - label: Example Content
+                    name: example_content
+                    widget: list
+                    fields:
+                      - {label: Link URL, name: link_url, widget: string}
+                      - {label: Image, name: image, widget: image}
+                      - {label: CSS Class, name: class, widget: string}
+              - label: Charts
+                name: charts
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Image, name: image, widget: image}
+              - label: Reviews
+                name: reviews
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - label: Review Entries
+                    name: reviews
+                    widget: list
+                    fields:
+                      - {label: Review Text, name: text, widget: text}
+                      - {label: Reviewer Image, name: image, widget: image}
+                      - {label: School, name: school, widget: string}
+                      - {label: Name, name: name, widget: string}
+                      - {label: Reviewer title, name: title, widget: string}
+              - label: Footer Hero
+                name: footer_hero
+                widget: object
+                fields:
+                  - {label: Background Image, name: background, widget: image}
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Signup Button Text, name: signup_button, widget: string}
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - label: Products (Icons)
+                name: products_icon
+                widget: list
+                fields:
+                  - {label: Image, name: image, widget: image}
+                  - {label: Link URL, name: url, widget: string}
+                  - {label: Alt, name: alt, widget: string}
+              - label: Navigation Links
+                name: navigation
+                widget: list
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Link URL, name: url, widget: string}
+              - {label: Copyright, name: copyright, widget: string}
+              - {label: Topup Arrow, name: topup_arrow, widget: image}
+      - file: "site/content/pricing/_index.ja.md"
+        label: "[ja] Reader Pricing"
+        name: ja-pricing
+        fields:
+          - label: Site Settings
+            name: site
+            widget: object
+            fields:
+              - label: Title
+                name: title 
+                widget: string
+              - label: Author
+                name: author
+                widget: string
+              - label: Keywords
+                name: keywords
+                widget: string
+              - label: Classification
+                name: classification
+                widget: string
+              - label: Description
+                name: description
+                widget: string
+              - label: Copyright
+                name: copyright
+                widget: string
+              - label: Logo
+                name: logo
+                widget: object
+                fields:
+                - label: Image
+                  name: image
+                  widget: image
+                - label: Title
+                  name: title
+                  widget: string
+                - label: Alt
+                  name: alt
+                  widget: string
+          - label: Header – Menu Links
+            name: header
+            widget: object
+            fields:
+              - label: Site menu
+                name: navbar
+                widget: object
+                fields:
+                  - {label: Home, name: home, widget: string}
+                  - {label: How it Works, name: how_it_works, widget: string}
+                  - {label: Pricing, name: pricing, widget: string}
+                  - {label: Redeem, name: redeem, widget: string}
+              - label: Action menu
+                name: actionbar
+                widget: object
+                fields:
+                  - {label: Sign in, name: signin, widget: string}
+                  - {label: Sign up, name: signup, widget: string}
+                  - {label: Ponddy, name: ponddy, widget: string}
+                  - {label: Dashboard, name: dashboard, widget: string}
+          - label: Main - Site content
+            name: main
+            widget: object
+            fields:
+              - label: Website Hero
+                name: hero
+                widget: object
+                fields:
+                  - label: Pricing Boxes
+                    name: pricing_boxes
+                    widget: list
+                    fields:
+                      - {label: Title, name: title, widget: string}
+                      - {label: Description, name: description, widget: string}
+                      - {label: Signup Link, name: signup_link, widget: string}
+                      - {label: Signup Button Text, name: button_text, widget: string}
+                      - {label: Type, name: type, widget: string}
+                      - label: Price
+                        name: price
+                        widget: object
+                        fields:
+                          - {label: Currency, name: currency, widget: string, required: false}
+                          - {label: Main Price, name: main, widget: string}
+                          - {label: Extra, name: extra, widget: string, required: false}
+                      - label: Badge
+                        name: badge
+                        widget: object
+                        required: false
+                        fields:
+                          - {label: Line 1, name: line1, widget: string}
+                          - {label: Line 2, name: line2, widget: string}
+              - label: Feature Tables
+                name: features
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - label: Tables
+                    name: tables
+                    widget: list
+                    fields:
+                      - label: Table Head
+                        name: head
+                        widget: list
+                        fields:
+                          - {label: Content, name: content, widget: string}
+                      - label: Table Rows
+                        name: rows
+                        widget: list
+                        fields:
+                          - label: Cells
+                            name: cells
+                            widget: list
+                            fields:
+                              - {label: Content, name: content, widget: string, required: false}
+                              - {label: Image, name: image, widget: image, required: false}
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - label: Products (Icons)
+                name: products_icon
+                widget: list
+                fields:
+                  - {label: Image, name: image, widget: image}
+                  - {label: Link URL, name: url, widget: string}
+                  - {label: Alt, name: alt, widget: string}
+              - label: Navigation Links
+                name: navigation
+                widget: list
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Link URL, name: url, widget: string}
+              - {label: Copyright, name: copyright, widget: string}
+              - {label: Topup Arrow, name: topup_arrow, widget: image}
+      - file: "site/content/_index.tw.md"
+        label: "[tw] Reader Landing"
+        name: tw-landing
+        fields:
+          - label: Site Settings
+            name: site
+            widget: object
+            fields:
+              - label: Title
+                name: title 
+                widget: string
+              - label: Author
+                name: author
+                widget: string
+              - label: Keywords
+                name: keywords
+                widget: string
+              - label: Classification
+                name: classification
+                widget: string
+              - label: Description
+                name: description
+                widget: string
+              - label: Copyright
+                name: copyright
+                widget: string
+              - label: Logo
+                name: logo
+                widget: object
+                fields:
+                - label: Image
+                  name: image
+                  widget: image
+                - label: Title
+                  name: title
+                  widget: string
+                - label: Alt
+                  name: alt
+                  widget: string
+          - label: Header – Menu Links
+            name: header
+            widget: object
+            fields:
+              - label: Site menu
+                name: navbar
+                widget: object
+                fields:
+                  - {label: Home, name: home, widget: string}
+                  - {label: How it Works, name: how_it_works, widget: string}
+                  - {label: Pricing, name: pricing, widget: string}
+                  - {label: Redeem, name: redeem, widget: string}
+              - label: Action menu
+                name: actionbar
+                widget: object
+                fields:
+                  - {label: Sign in, name: signin, widget: string}
+                  - {label: Sign up, name: signup, widget: string}
+                  - {label: Ponddy, name: ponddy, widget: string}
+                  - {label: Dashboard, name: dashboard, widget: string}
+          - label: Main - Site content
+            name: main
+            widget: object
+            fields:
+              - label: Redeem
+                name: redeem
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Subtitle, name: subtitle, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Note, name: note, widget: string}
+                  - {label: Redeem, name: redeem, widget: string}
+                  - {label: register, name: register, widget: string}
+              - label: Website Hero
+                name: hero
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Descriptiopn, name: description, widget: text}
+                  - {label: Create Button - Text, name: create_button, widget: string}
+                  - {label: Pricing Button - Text, name: pricing_button, widget: string}
+                  - {label: Youtube Video Link, name: youtube_embed_link, widget: string}
+              - label: How it Works
+                name: how_it_works
+                widget: object
+                fields:
+                  - label: Gadgets
+                    name: show
+                    widget: object
+                    fields:
+                      - {label: Mac Image, name: mac_image, widget: image}
+                      - {label: iPhone Image, name: iphone_image, widget: image}
+                  - {label: Title, name: title, widget: string}
+                  - labels: Title Images
+                    name: icons
+                    widget: list
+                    fields:
+                      - {label: Icon image, name: url, widget: image}
+                  - {label: Content, name: text, widget: text}
+                  - labels: Feature Icons
+                    name: feature_icons
+                    widget: list
+                    fields:
+                      - {label: Icon image, name: url, widget: image}
+              - label: Tools
+                name: tools
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - label: Wheel
+                    name: wheel
+                    widget: list
+                    fields:
+                      - {label: Icon image, name: url, widget: image}
+                      - {label: Class name, name: class, widget: string}
+                  - label: Features
+                    name: features
+                    widget: list
+                    fields:
+                      - {label: Title, name: title, widget: string}
+                      - {label: Description, name: description, widget: text}
+                      - {label: ID, name: id, widget: string}
+              - label: Vocabulary
+                name: vocabulary
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - label: Key View
+                    name: key_view
+                    widget: list
+                    fields:
+                      - {label: Title, name: title, widget: string}
+                      - {label: Image, name: image, widget: image}
+              - label: Share
+                name: share
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Image, name: image, widget: image}
+              - label: Library
+                name: library
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - label: Example Content
+                    name: example_content
+                    widget: list
+                    fields:
+                      - {label: Link URL, name: link_url, widget: string}
+                      - {label: Image, name: image, widget: image}
+                      - {label: CSS Class, name: class, widget: string}
+              - label: Charts
+                name: charts
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Image, name: image, widget: image}
+              - label: Reviews
+                name: reviews
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - label: Review Entries
+                    name: reviews
+                    widget: list
+                    fields:
+                      - {label: Review Text, name: text, widget: text}
+                      - {label: Reviewer Image, name: image, widget: image}
+                      - {label: School, name: school, widget: string}
+                      - {label: Name, name: name, widget: string}
+                      - {label: Reviewer title, name: title, widget: string}
+              - label: Footer Hero
+                name: footer_hero
+                widget: object
+                fields:
+                  - {label: Background Image, name: background, widget: image}
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Signup Button Text, name: signup_button, widget: string}
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - label: Products (Icons)
+                name: products_icon
+                widget: list
+                fields:
+                  - {label: Image, name: image, widget: image}
+                  - {label: Link URL, name: url, widget: string}
+                  - {label: Alt, name: alt, widget: string}
+              - label: Navigation Links
+                name: navigation
+                widget: list
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Link URL, name: url, widget: string}
+              - {label: Copyright, name: copyright, widget: string}
+              - {label: Topup Arrow, name: topup_arrow, widget: image}
+      - file: "site/content/pricing/_index.tw.md"
+        label: "[tw] Reader Pricing"
+        name: tw-pricing
+        fields:
+          - label: Site Settings
+            name: site
+            widget: object
+            fields:
+              - label: Title
+                name: title 
+                widget: string
+              - label: Author
+                name: author
+                widget: string
+              - label: Keywords
+                name: keywords
+                widget: string
+              - label: Classification
+                name: classification
+                widget: string
+              - label: Description
+                name: description
+                widget: string
+              - label: Copyright
+                name: copyright
+                widget: string
+              - label: Logo
+                name: logo
+                widget: object
+                fields:
+                - label: Image
+                  name: image
+                  widget: image
+                - label: Title
+                  name: title
+                  widget: string
+                - label: Alt
+                  name: alt
+                  widget: string
+          - label: Header – Menu Links
+            name: header
+            widget: object
+            fields:
+              - label: Site menu
+                name: navbar
+                widget: object
+                fields:
+                  - {label: Home, name: home, widget: string}
+                  - {label: How it Works, name: how_it_works, widget: string}
+                  - {label: Pricing, name: pricing, widget: string}
+                  - {label: Redeem, name: redeem, widget: string}
+              - label: Action menu
+                name: actionbar
+                widget: object
+                fields:
+                  - {label: Sign in, name: signin, widget: string}
+                  - {label: Sign up, name: signup, widget: string}
+                  - {label: Ponddy, name: ponddy, widget: string}
+                  - {label: Dashboard, name: dashboard, widget: string}
+          - label: Main - Site content
+            name: main
+            widget: object
+            fields:
+              - label: Redeem
+                name: redeem
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Subtitle, name: subtitle, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Note, name: note, widget: string}
+                  - {label: Redeem, name: redeem, widget: string}
+                  - {label: register, name: register, widget: string}
+              - label: Website Hero
+                name: hero
+                widget: object
+                fields:
+                  - label: Pricing Boxes
+                    name: pricing_boxes
+                    widget: list
+                    fields:
+                      - {label: Title, name: title, widget: string}
+                      - {label: Description, name: description, widget: string}
+                      - {label: Signup Link, name: signup_link, widget: string}
+                      - {label: Signup Button Text, name: button_text, widget: string}
+                      - {label: Type, name: type, widget: string}
+                      - label: Price
+                        name: price
+                        widget: object
+                        fields:
+                          - {label: Currency, name: currency, widget: string, required: false}
+                          - {label: Main Price, name: main, widget: string}
+                          - {label: Extra, name: extra, widget: string, required: false}
+                      - label: Badge
+                        name: badge
+                        widget: object
+                        required: false
+                        fields:
+                          - {label: Line 1, name: line1, widget: string}
+                          - {label: Line 2, name: line2, widget: string}
+              - label: Feature Tables
+                name: features
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - label: Tables
+                    name: tables
+                    widget: list
+                    fields:
+                      - label: Table Head
+                        name: head
+                        widget: list
+                        fields:
+                          - {label: Content, name: content, widget: string}
+                      - label: Table Rows
+                        name: rows
+                        widget: list
+                        fields:
+                          - label: Cells
+                            name: cells
+                            widget: list
+                            fields:
+                              - {label: Content, name: content, widget: string, required: false}
+                              - {label: Image, name: image, widget: image, required: false}
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - label: Products (Icons)
+                name: products_icon
+                widget: list
+                fields:
+                  - {label: Image, name: image, widget: image}
+                  - {label: Link URL, name: url, widget: string}
+                  - {label: Alt, name: alt, widget: string}
+              - label: Navigation Links
+                name: navigation
+                widget: list
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Link URL, name: url, widget: string}
+              - {label: Copyright, name: copyright, widget: string}
+              - {label: Topup Arrow, name: topup_arrow, widget: image}
+      - file: "site/content/_index.cn.md"
+        label: "[cn] Reader Landing"
+        name: cn-landing
+        fields:
+          - label: Site Settings
+            name: site
+            widget: object
+            fields:
+              - label: Title
+                name: title 
+                widget: string
+              - label: Author
+                name: author
+                widget: string
+              - label: Keywords
+                name: keywords
+                widget: string
+              - label: Classification
+                name: classification
+                widget: string
+              - label: Description
+                name: description
+                widget: string
+              - label: Copyright
+                name: copyright
+                widget: string
+              - label: Logo
+                name: logo
+                widget: object
+                fields:
+                - label: Image
+                  name: image
+                  widget: image
+                - label: Title
+                  name: title
+                  widget: string
+                - label: Alt
+                  name: alt
+                  widget: string
+          - label: Header – Menu Links
+            name: header
+            widget: object
+            fields:
+              - label: Site menu
+                name: navbar
+                widget: object
+                fields:
+                  - {label: Home, name: home, widget: string}
+                  - {label: How it Works, name: how_it_works, widget: string}
+                  - {label: Pricing, name: pricing, widget: string}
+                  - {label: Redeem, name: redeem, widget: string}
+              - label: Action menu
+                name: actionbar
+                widget: object
+                fields:
+                  - {label: Sign in, name: signin, widget: string}
+                  - {label: Sign up, name: signup, widget: string}
+                  - {label: Ponddy, name: ponddy, widget: string}
+                  - {label: Dashboard, name: dashboard, widget: string}
+          - label: Main - Site content
+            name: main
+            widget: object
+            fields:
+              - label: Redeem
+                name: redeem
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Subtitle, name: subtitle, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Note, name: note, widget: string}
+                  - {label: Redeem, name: redeem, widget: string}
+                  - {label: register, name: register, widget: string}
+              - label: Website Hero
+                name: hero
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Descriptiopn, name: description, widget: text}
+                  - {label: Create Button - Text, name: create_button, widget: string}
+                  - {label: Pricing Button - Text, name: pricing_button, widget: string}
+                  - {label: Youtube Video Link, name: youtube_embed_link, widget: string}
+              - label: How it Works
+                name: how_it_works
+                widget: object
+                fields:
+                  - label: Gadgets
+                    name: show
+                    widget: object
+                    fields:
+                      - {label: Mac Image, name: mac_image, widget: image}
+                      - {label: iPhone Image, name: iphone_image, widget: image}
+                  - {label: Title, name: title, widget: string}
+                  - labels: Title Images
+                    name: icons
+                    widget: list
+                    fields:
+                      - {label: Icon image, name: url, widget: image}
+                  - {label: Content, name: text, widget: text}
+                  - labels: Feature Icons
+                    name: feature_icons
+                    widget: list
+                    fields:
+                      - {label: Icon image, name: url, widget: image}
+              - label: Tools
+                name: tools
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - label: Wheel
+                    name: wheel
+                    widget: list
+                    fields:
+                      - {label: Icon image, name: url, widget: image}
+                      - {label: Class name, name: class, widget: string}
+                  - label: Features
+                    name: features
+                    widget: list
+                    fields:
+                      - {label: Title, name: title, widget: string}
+                      - {label: Description, name: description, widget: text}
+                      - {label: ID, name: id, widget: string}
+              - label: Vocabulary
+                name: vocabulary
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - label: Key View
+                    name: key_view
+                    widget: list
+                    fields:
+                      - {label: Title, name: title, widget: string}
+                      - {label: Image, name: image, widget: image}
+              - label: Share
+                name: share
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Image, name: image, widget: image}
+              - label: Library
+                name: library
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - label: Example Content
+                    name: example_content
+                    widget: list
+                    fields:
+                      - {label: Link URL, name: link_url, widget: string}
+                      - {label: Image, name: image, widget: image}
+                      - {label: CSS Class, name: class, widget: string}
+              - label: Charts
+                name: charts
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Image, name: image, widget: image}
+              - label: Reviews
+                name: reviews
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - label: Review Entries
+                    name: reviews
+                    widget: list
+                    fields:
+                      - {label: Review Text, name: text, widget: text}
+                      - {label: Reviewer Image, name: image, widget: image}
+                      - {label: School, name: school, widget: string}
+                      - {label: Name, name: name, widget: string}
+                      - {label: Reviewer title, name: title, widget: string}
+              - label: Footer Hero
+                name: footer_hero
+                widget: object
+                fields:
+                  - {label: Background Image, name: background, widget: image}
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Signup Button Text, name: signup_button, widget: string}
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - label: Products (Icons)
+                name: products_icon
+                widget: list
+                fields:
+                  - {label: Image, name: image, widget: image}
+                  - {label: Link URL, name: url, widget: string}
+                  - {label: Alt, name: alt, widget: string}
+              - label: Navigation Links
+                name: navigation
+                widget: list
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Link URL, name: url, widget: string}
+              - {label: Copyright, name: copyright, widget: string}
+              - {label: Topup Arrow, name: topup_arrow, widget: image}
+      - file: "site/content/pricing/_index.cn.md"
+        label: "[cn] Reader Pricing"
+        name: cn-pricing
+        fields:
+          - label: Site Settings
+            name: site
+            widget: object
+            fields:
+              - label: Title
+                name: title 
+                widget: string
+              - label: Author
+                name: author
+                widget: string
+              - label: Keywords
+                name: keywords
+                widget: string
+              - label: Classification
+                name: classification
+                widget: string
+              - label: Description
+                name: description
+                widget: string
+              - label: Copyright
+                name: copyright
+                widget: string
+              - label: Logo
+                name: logo
+                widget: object
+                fields:
+                - label: Image
+                  name: image
+                  widget: image
+                - label: Title
+                  name: title
+                  widget: string
+                - label: Alt
+                  name: alt
+                  widget: string
+          - label: Header – Menu Links
+            name: header
+            widget: object
+            fields:
+              - label: Site menu
+                name: navbar
+                widget: object
+                fields:
+                  - {label: Home, name: home, widget: string}
+                  - {label: How it Works, name: how_it_works, widget: string}
+                  - {label: Pricing, name: pricing, widget: string}
+                  - {label: Redeem, name: redeem, widget: string}
+              - label: Action menu
+                name: actionbar
+                widget: object
+                fields:
+                  - {label: Sign in, name: signin, widget: string}
+                  - {label: Sign up, name: signup, widget: string}
+                  - {label: Ponddy, name: ponddy, widget: string}
+                  - {label: Dashboard, name: dashboard, widget: string}
+          - label: Main - Site content
+            name: main
+            widget: object
+            fields:
+              - label: Redeem
+                name: redeem
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Subtitle, name: subtitle, widget: string}
+                  - {label: Description, name: description, widget: text}
+                  - {label: Note, name: note, widget: string}
+                  - {label: Redeem, name: redeem, widget: string}
+                  - {label: register, name: register, widget: string}
+              - label: Website Hero
+                name: hero
+                widget: object
+                fields:
+                  - label: Pricing Boxes
+                    name: pricing_boxes
+                    widget: list
+                    fields:
+                      - {label: Title, name: title, widget: string}
+                      - {label: Description, name: description, widget: string}
+                      - {label: Signup Link, name: signup_link, widget: string}
+                      - {label: Signup Button Text, name: button_text, widget: string}
+                      - {label: Type, name: type, widget: string}
+                      - label: Price
+                        name: price
+                        widget: object
+                        fields:
+                          - {label: Currency, name: currency, widget: string, required: false}
+                          - {label: Main Price, name: main, widget: string}
+                          - {label: Extra, name: extra, widget: string, required: false}
+                      - label: Badge
+                        name: badge
+                        widget: object
+                        required: false
+                        fields:
+                          - {label: Line 1, name: line1, widget: string}
+                          - {label: Line 2, name: line2, widget: string}
+              - label: Feature Tables
+                name: features
+                widget: object
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - label: Tables
+                    name: tables
+                    widget: list
+                    fields:
+                      - label: Table Head
+                        name: head
+                        widget: list
+                        fields:
+                          - {label: Content, name: content, widget: string}
+                      - label: Table Rows
+                        name: rows
+                        widget: list
+                        fields:
+                          - label: Cells
+                            name: cells
+                            widget: list
+                            fields:
+                              - {label: Content, name: content, widget: string, required: false}
+                              - {label: Image, name: image, widget: image, required: false}
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - label: Products (Icons)
+                name: products_icon
+                widget: list
+                fields:
+                  - {label: Image, name: image, widget: image}
+                  - {label: Link URL, name: url, widget: string}
+                  - {label: Alt, name: alt, widget: string}
+              - label: Navigation Links
+                name: navigation
+                widget: list
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: Link URL, name: url, widget: string}
+              - {label: Copyright, name: copyright, widget: string}
+              - {label: Topup Arrow, name: topup_arrow, widget: image}

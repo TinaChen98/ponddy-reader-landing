@@ -1,0 +1,34 @@
+<section class="feature">
+    <div class="container  justify-content-center pr-5 pl-5">
+        <div class="col-md-10 text-center mr-auto ml-auto">
+            <h1 class="text-center">
+                {{.title}}
+            </h1>
+        </div>
+        <div class="row text-center ">
+            {{ range .features}}
+            <div class=" col-lg-4 item text-left">
+                <img class="icon" data-src="{{.icon}}" alt="icon">
+                <div class="title">{{.title}}</div>
+                <div class="description">{{.description}}</div>
+            </div>
+            {{ end }}
+
+<!--            <div class="col-md-4">-->
+<!--                <img class="icon" data-src="{{.item2.icon}}">-->
+<!--                <div class="title">{{.item2.title}}</div>-->
+<!--                <div class="description">{{.item2.description}}</div>-->
+<!--            </div>-->
+<!--            <div class="col-md-4">-->
+<!--                <img class="icon" data-src="{{.item3.icon}}">-->
+<!--                <div class="title">{{.item3.title}}</div>-->
+<!--                <div class="description">{{.item3.description}}</div>-->
+<!--            </div>-->
+
+        </div>
+        <div class="row">
+
+        </div>
+    </div>
+
+</section>

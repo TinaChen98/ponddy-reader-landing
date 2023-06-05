@@ -1,0 +1,29 @@
+<section class="reviews">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{{.title}}</h1>
+
+                <div class="boxes row">
+                    {{ range .reviews }}
+                    <div class="review col-md-6">
+                        <p class="text">{{.text}}</p>
+                        <div class="media">
+                            <img class="image mr-3" data-src="{{.image }}" alt="image">
+                            <div class="media-body">
+                                <span class="school">{{.school}}</span>
+                                <div>
+                                    <span class="name">{{.name}}</span>
+                                    <span class="title">{{.title}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

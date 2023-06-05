@@ -1,0 +1,62 @@
+<section class="resources">
+    <div class="header">
+        <ul class="nav justify-content-center pd-nav-item">
+            <li class="nav-item"><a class="nav-link active" id="nav-link-all">{{.navs.all}}</a></li>
+            <li class="nav-item"><a class="nav-link" id="nav-link-teacher">{{.navs.teacher}}</a></li>
+            <li class="nav-item"><a class="nav-link" id="nav-link-student">{{.navs.student}}</a></li>
+        </ul>
+    </div>
+    <div class="teachers">
+        <div class="container">
+            <h1><span>{{.content.teacher_title}}</span></h1>
+            <div class="row justify-content-center">
+                {{ range .content.teachers }}
+                <div class="card">
+                    <h5 class="card-title">{{.card_title}}</h5>
+                    <div class="card-content">
+                        <div style="display: none;" class="card-cover" id="{{.card_desc_id}}">
+                            <span >{{.card_description}}</span>
+                        </div>
+                        <div class="mobile">
+                            <p class="description">{{.card_description}}</p>
+                        </div>
+                        <img class="card-img-top" data-src="{{.card_img}}" alt="card-img-top">
+                    </div>
+                    <a class="card-btn btn" id="{{.card_btn_id}}" onclick="showCard(this.id)">
+                        {{.learn_more}}
+                        <img data-src="/public/images/reader/icon_learnmore_b.svg" alt="icon_learnmore_b">
+                        <img style="display: none;" src="/public/images/reader/icon_learnmore_w.svg" alt="icon_learnmore_w">
+                    </a>
+                </div>
+                {{ end }}
+                <div class="desktop card-empty" ></div>
+            </div>
+        </div>
+    </div>
+    <div class="learners">
+        <div class="container">
+            <h1><span>{{.content.learner_title}}</span></h1>
+            <div class="row justify-content-center">
+                {{ range .content.learners }}
+                <div class="card">
+                    <h5 class="card-title">{{.card_title}}</h5>
+                    <div class="card-content">
+                        <div style="display: none;" class="card-cover" id="{{.card_desc_id}}">
+                            <span >{{.card_description}}</span>
+                        </div>
+                        <div class="mobile">
+                            <p class="description">{{.card_description}}</p>
+                        </div>
+                        <img class="card-img-top" data-src="{{.card_img}}" alt="card">
+                    </div>
+                    <a class="card-btn btn" id="{{.card_btn_id}}" onclick="showCard(this.id)">
+                        {{.learn_more}}
+                        <img data-src="/public/images/reader/icon_learnmore_o.svg" alt="icon_learnmore_o">
+                        <img style="display: none;" src="/public/images/reader/icon_learnmore_w.svg" alt="icon_learnmore_w">
+                    </a>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>

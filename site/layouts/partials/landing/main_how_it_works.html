@@ -1,0 +1,34 @@
+<section class="content how-it-works" id="how-it-works">
+    <div class="container">
+        <div class="row product justify-content-center">
+            <div class="col-md-9 title">
+                <h1>
+                    {{.title}}
+                </h1>
+
+            </div>
+        </div>
+        <div class="justify-content-center " style="display: flex">
+            <img class="desktop prev-btn mr-4" data-src="/public/images/reader/icon/L_eva_arrow-ios-back-fill.svg" alt="L_eva_arrow-ios-back-fill">
+            <div class="owl-carousel owl-theme" id="feature-owl">
+                {{ range .features }}
+                <div class="item">
+                    <div class="col-md-6 col-sm-12 mr-auto ml-auto">
+                        <div class="card">
+                            <a data-toggle="modal" data-target="#img_cardModal" id="img_card-nav" data-was-processed="true" onclick="img_url({{ .url}})">
+                                <img data-src="{{.url}}" alt="url">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="textSetion col-md-6 col-sm-12 mr-auto ml-auto">
+                        <h1 class="title text-left">{{.title}}</h1>
+                        <p class="description text-left">{{.text}}</p>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            <img class="desktop next-btn ml-4" data-src="/public/images/reader/icon/R_eva_arrow-ios-back-fill.svg" alt="L_eva_arrow-ios-back-fill">
+
+        </div>
+    </div>
+</section>

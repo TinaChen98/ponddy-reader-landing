@@ -1,0 +1,43 @@
+<section class="feature">
+    <div class="container  justify-content-center" style="margin-bottom: 50px;">
+        <div class="col-md-10 text-center mr-auto ml-auto">
+            <h1 class="text-center ">
+                {{.title}}
+            </h1>
+        </div>
+        <div class="row text-center">
+            {{ range first 3 .features}}
+            <div class="col-lg-4 col-md-5 item text-left">
+                <img class="icon" data-src="{{.icon}}" alt="icon">
+                <div class="title">{{.title}}
+                    <font style="font-size: 16px;">{{.content}}</font>
+                </div>
+                <div class="description">
+                    <font style="color:#576168">{{.description | safeHTML }}</font>
+                </div>
+            </div>
+            {{ end }}
+
+        </div>
+        <div class="row text-center" id="all-features" style="display: none">
+            {{ range after 3 .features}}
+            <div class="col-lg-4 col-md-5 item text-left ">
+                <img class="icon" data-src="{{.icon}}" alt="icon">
+                <div class="title">{{.title}}
+                    <font style="font-size: 16px;">{{.content}}</font>
+                </div>
+                <div class="description">
+                    <font style="color:#576168">{{.description | safeHTML }}</font>
+                </div>
+            </div>
+            {{ end }}
+
+        </div>
+        <div class="row justify-content-center" id="more_features">
+            <div  class="more_features">
+                {{.more}}
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,35 @@
+<section class="footer-hero">
+    <div class="hero-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-10 col-md-12 text-center">
+                    <img data-src="{{.icon}}" alt="icon">
+                </div>
+                <div class="col-md-8 col-11 text-center">
+                    <h1>{{.title}}</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <a  href="https://auth.ponddy.com/auth/?client_id=2ecd2ce4-86a0-4e75-8548-e574d23f5731&redirect_uri=https://reader.ponddy.com/app/&next=%23reader-dashboard"
+                        class="btn_focus-secondary  btn" style="margin-top: 20px">
+                        {{.signup_button}}</a>
+                    <p class="no_credit">*{{.no_credit}}*</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ponddy-education">
+        <div class="container justify-content-center">
+            <h1>{{.ponddy_education.title}}</h1>
+            <div class="col-sm-10 col-md-8  mr-auto ml-auto">
+                <p>{{.ponddy_education.description}}</p>
+            </div>
+            <div class="col-md-8 mr-auto ml-auto text-center">
+                <a  href="https://chinese.ponddy.com/"
+                    class="btn_general-secondary btn" style="margin-top: 32px">
+                    {{.ponddy_education.more}}</a>
+            </div>
+        </div>
+    </div>
+</section>

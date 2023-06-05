@@ -1,0 +1,16 @@
+<section class="vocabulary">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <h1>{{.title }}</h1>
+                <p>{{.description }}</p>
+            </div>            
+            {{ range .key_view }}
+            <div class="col-md-6 text-center key-view">
+                <h2>{{.title}}</h2>                
+                <img data-src="{{.image}}" class="key-withshadow" alt="key-withshadow">
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>

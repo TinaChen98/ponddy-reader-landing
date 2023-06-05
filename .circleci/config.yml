@@ -1,0 +1,86 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ubuntu:18.04
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run:
+          name: install dependencies & build
+          command: |
+            apt update && apt install -y hugo curl git
+            cp ./bin/hugo.linux /usr/bin
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" || echo "error"
+            [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" || echo "error"
+            source $HOME/.nvm/nvm.sh || echo "error"
+            nvm install v11.15 && nvm use v11.15 && \
+            npm install && npm run build
+            mv CNAME ./dist/CNAME
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - dist
+
+  deploy:
+    docker:
+      - image: node:12.14
+    working_directory: ~/repo
+    steps:
+      - checkout
+
+      - attach_workspace:
+          at: ~/repo
+
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages
+            git config --global user.email "ci@ponddy-edu.com"
+            git config --global user.name "ponddy-edu"
+
+      - add_ssh_keys:
+          fingerprints:
+            - "5e:2c:ef:1a:a2:bd:b4:7f:bb:62:cd:f6:63:32:ef:cb"
+
+      - run:
+
+          name: Deploying
+          command: |
+            export MSG="#${CIRCLE_BUILD_NUM} ${CIRCLE_PROJECT_REPONAME} ${CIRCLE_BRANCH} is updating"
+            curl -X POST \
+            -H 'Content-type: application/json' \
+            --data '{"text":"'"${MSG}"'"}' \
+            "${SLACK_WEBHOOK}"
+            gh-pages --dist dist --message "[skip ci] Updates GitHub page $CIRCLE_SHA1" --no-history
+            # Deployed
+            export MSG="#${CIRCLE_BUILD_NUM} ${CIRCLE_PROJECT_REPONAME} ${CIRCLE_BRANCH} is updated"
+            curl -X POST \
+            -H 'Content-type: application/json' \
+            --data '{"text":"'"${MSG}"'"}' \
+            "${SLACK_WEBHOOK}"
+
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+      - deploy:
+          requires:
+            - build
+          context:
+            - slack
+          filters:
+            branches:
+              only:
+                - master

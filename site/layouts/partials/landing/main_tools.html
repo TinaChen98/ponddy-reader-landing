@@ -1,0 +1,37 @@
+<section class="tools">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+
+                <h1>{{ .title }}</h1>
+                <p>{{ .description }}</p>
+
+                <div class="wheel">
+                    {{ range .wheel }}
+                    <img src="{{.url}}" class="{{.class}} tool-animate" id="{{.class}}-img" alt="image">
+                    {{ end }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+
+                <div class="feature-boxes row">
+                    {{ range .features }}
+                    <div class="col-lg-3 col-md-6 col-8">
+                        <div class="feature" id="{{.id}}">
+                            <h1>{{.title}}</h1>
+                            <p>{{.description}}</p>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

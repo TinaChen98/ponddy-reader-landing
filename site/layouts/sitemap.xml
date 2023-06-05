@@ -1,0 +1,65 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">  
+  <url>
+    <loc>https://reader.ponddy.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2019-06-14</lastmod>
+  </url>
+
+  <url>
+    <loc>https://reader.ponddy.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2019-06-14</lastmod>
+  </url>
+
+  <url>
+    <loc>https://reader.ponddy.com/ja/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2019-06-14</lastmod>
+  </url>
+
+  <url>
+    <loc>https://reader.ponddy.com/tw/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2019-06-18</lastmod>
+  </url>
+
+  <url>
+    <loc>https://reader.ponddy.com/cn/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2019-06-19</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://reader.ponddy.com/pricing/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2019-06-14</lastmod>
+  </url>
+
+  <url>
+    <loc>https://reader.ponddy.com/ja/pricing/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2019-06-14</lastmod>
+  </url>
+
+  <url>
+    <loc>https://reader.ponddy.com/tw/pricing/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2019-06-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://reader.ponddy.com/cn/pricing/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2019-06-19</lastmod>
+  </url>
+</urlset>

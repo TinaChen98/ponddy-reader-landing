@@ -1,0 +1,37 @@
+DefaultContentLanguage = "en"
+DefaultContentLanguageInSubdir = "false"
+enableRobotsTXT = "true"
+
+[languages]
+  [languages.en]
+    languageCode = "en-us"
+    languageName = "English"
+    weight = 2
+  [languages.ja]
+    languageCode = "ja"
+    languageName = "日本語"
+    weight = 1
+  [languages.tw]
+    languageCode = "zh-TW"
+    languageName = "繁體中文"
+    weight = 1
+  [languages.cn]
+    languageCode = "zh-CN"
+    languageName = "简体中文"
+    weight = 1
+  [languages.th]
+    languageCode = "th"
+    languageName = "ภาษาไทย"
+    weight = 1
+  [languages.ru]
+      languageCode = "ru"
+      languageName = "русский"
+      weight = 1
+  [languages.es]
+      languageCode = "es"
+      languageName = "es"
+      weight = 1
+  [languages.id]
+      languageCode = "id"
+      languageName = "id"
+      weight = 1

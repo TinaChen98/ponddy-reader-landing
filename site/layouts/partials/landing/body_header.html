@@ -1,0 +1,113 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a onClick="goHero()">
+                <img class="logo product-logo" data-src="{{ .site.logo.image }}" alt="{{.site.logo.alt}}"
+                     title="{{.site.logo.title}}">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
+                    aria-controls="navbarsExample07"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-text">menu</span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExample07">
+                <ul class="pd-nav-item navbar-nav mr-auto ml-auto">
+                    <li class="nav-item  nav-border-r">
+                        <a onclick="changeHeader('/')">
+                            {{.header.navbar.home}}
+                        </a>
+                    </li>
+                    <li class="nav-item  nav-border-r">
+                        <a onclick="changeHeader('/for_teachers/')">
+                            {{.header.navbar.for_teacher}}
+                        </a>
+                    </li>
+                    <li class="nav-item  nav-border-r">
+                        <a onclick="changeHeader('/for_learners/')">
+                            {{.header.navbar.for_learners}}
+                        </a>
+                    </li>
+                    <li class="nav-item  nav-border-r">
+                        <a onclick="changeHeader('/for_institutions/')">
+                            {{.header.navbar.for_institutions}}
+                        </a>
+                    </li>
+                    <li class="nav-item  nav-border-r">
+                        <a onclick="changeHeader('/pricing/')">
+                            {{.header.navbar.pricing}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                         <a id="resources" href='{{ "/resources/" | relLangURL }}'>
+                            {{.header.navbar.resources}}
+                        </a>
+                    </li>
+<!--                                        <li>-->
+                    <!--                                            <a data-toggle="modal" data-target="#redeemModal" id="redeem-nav">-->
+                    <!--                                                {{.header.navbar.redeem}}-->
+                    <!--                                            </a>-->
+                    <!--                                        </li>-->
+                    <li class="mobile mb-0  nav-item">
+                        <div class=" navbar-collapse">
+                            <a class="dropdown-toggle" href="#" id="navbarDropdown_mobile" role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="false" aria-expanded="false">
+
+                                {{.site.language_full}}
+                            </a>
+                            <ui class="dropdown-menu" id="courseMenu"
+                                aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" onclick="clickLanguage('en', '')">English</a>
+                                <a class="dropdown-item" onclick="clickLanguage('zh', '')">简体中文</a>
+                                <a class="dropdown-item" onclick="clickLanguage('zh-tw', '')">繁體中文</a>
+                                <a class="dropdown-item" onclick="clickLanguage('ja', '')">日本語</a>
+                                <a class="dropdown-item" onclick="clickLanguage('th', '')">ภาษาไทย</a>
+                                <a class="dropdown-item" onclick="clickLanguage('id', '')">bahasa Indonesia</a>
+                            </ui>
+                        </div>
+                    </li>
+                    <li class="mobile action nav-item">
+                        <a class=" button naked no-login" id="header-signin-mobile"
+                           href="https://auth.ponddy.com/auth/?client_id=2ecd2ce4-86a0-4e75-8548-e574d23f5731&redirect_uri=https://reader.ponddy.com/app/&next=%23reader-dashboard">
+                            {{.header.actionbar.signin}}
+                        </a>
+                        <a class="button dashboard hidden" id="header-signin-dashboard" href="/app/">
+                            {{.header.actionbar.dashboard}}
+                        </a>
+                    </li>
+                </ul>
+                <div class="action text-center auth">
+                    <div class="collapse navbar-collapse">
+                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                           aria-haspopup="false" aria-expanded="false">
+                            {{.site.language_full}}
+                        </a>
+                        <ui class="dropdown-menu" id="courseMenu"
+                            aria-labelledby="navbarDropdown">
+                            <span onclick="clickLanguage('en', '')" class="dropdown-item">English</span>
+                            <span onclick="clickLanguage('zh', '')" class="dropdown-item">简体中文</span>
+                            <span onclick="clickLanguage('zh-tw', '')" class="dropdown-item">繁體中文</span>
+                            <span onclick="clickLanguage('ja', '')" class="dropdown-item">日本語</span>
+                            <span onclick="clickLanguage('th', '')" class="dropdown-item">ภาษาไทย</span>
+                            <span onclick="clickLanguage('id', '')" class="dropdown-item">bahasa Indonesia</span>
+
+                        </ui>
+                    </div>
+
+                    <a class="desktop button naked no-login " id="header-signin"
+                       href="https://auth.ponddy.com/auth/?client_id=2ecd2ce4-86a0-4e75-8548-e574d23f5731&redirect_uri=https://reader.ponddy.com/app/&next=%23reader-dashboard">
+                        {{.header.actionbar.signin}}
+                    </a>
+                    <a class="desktop button dashboard hidden" id="header-dashboard" href="/app/">
+                        {{.header.actionbar.dashboard}}
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

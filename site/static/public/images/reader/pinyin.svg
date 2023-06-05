@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#CCC" fill-rule="nonzero" d="M6.04 2h37.004a5.04 5.04 0 0 1 5.04 5.04v35.92a5.04 5.04 0 0 1-5.04 5.04H6.04A5.04 5.04 0 0 1 1 42.96V7.04A5.04 5.04 0 0 1 6.04 2z"/>
+        <path fill="#00A0FA" fill-rule="nonzero" d="M6.04 0h37.004a5.04 5.04 0 0 1 5.04 5.04v35.92a5.04 5.04 0 0 1-5.04 5.04H6.04A5.04 5.04 0 0 1 1 40.96V5.04A5.04 5.04 0 0 1 6.04 0z"/>
+        <path fill="#0096FA" fill-rule="nonzero" d="M6.04 2h37.004a5.04 5.04 0 0 1 5.04 5.04v32.92a5.04 5.04 0 0 1-5.04 5.04H6.04A5.04 5.04 0 0 1 1 39.96V7.04A5.04 5.04 0 0 1 6.04 2z"/>
+        <text fill="#0078C8" font-family="PingFangTC-Regular, PingFang TC" font-size="34.56">
+            <tspan x="6" y="42">拼</tspan>
+        </text>
+        <text fill="#FFF" font-family="PingFangTC-Regular, PingFang TC" font-size="34.56">
+            <tspan x="8" y="39">拼</tspan>
+        </text>
+    </g>
+</svg>

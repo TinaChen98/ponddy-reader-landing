@@ -1,0 +1,212 @@
+<section class="features">
+    <h1>{{.title}}</h1>
+
+    <table class="mobile p-table">
+        <thead>
+            <tr class="c-row head title" style="background-color: white">
+                {{range $index, $element := .table_title}} {{if eq $index 0}}
+                <th class="cell cell_header" data-tablesaw-priority="persist" style="background-color: #{{.color}}">
+                    {{ .content }}
+                </th>
+                {{else}}
+                <th class="cell cell_header" style="background-color: #{{.color}}">
+                    {{ .content }}
+                </th>
+                {{end}} {{end}}
+            </tr>
+        </thead>
+        <tbody>
+            {{ range .tables_mobile }}
+
+            <tr class="c-row head ">
+                {{ range.head }} {{if not .content}}
+                <td class="cell ">
+                </td>
+                {{ end }} {{if .content}}
+                <td class="cell " style="background-color: #{{.color}}">
+                    <span style="float: left;" class="dropup align-self-center help" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ .content }}
+                        {{ if .mark }}
+                        <span class="dropup align-self-center help">
+                            <div class="dropdown-menu help__menu">
+                                <div class="help__menu__title">{{ .content }}</div>
+                                <div class="help__menu__content">{{ .mark }}</div>
+                            </div>
+                        </span> {{ end }}
+                    </span>
+                </td>
+                {{ end }} {{ end }}
+            </tr>
+
+            {{ range .rows}}
+            <tr class="c-row">
+
+                {{ range $index, $element := .cells}} {{if eq $index 0}}
+                <td class="cell ">
+                    {{ if .image }}
+                    <img alt="image" src="{{.image}}"> {{ else }}
+                    <span style="float: left;" class="dropup align-self-center help" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ .content }}
+                        {{ if .mark }}
+                        <span class="dropup align-self-center help">
+                            <div class="dropdown-menu help__menu">
+                                <div class="help__menu__title">{{ .content }}</div>
+                                <div class="help__menu__content">{{ .mark }}</div>
+                            </div>
+                        </span> {{ end }}
+                    </span> {{ end }}
+                </td>
+                {{ else }}
+                <td class="cell">
+                    {{ if .image }}
+                    <img alt="image" src="{{.image}}"> {{ else }}
+                    <p>{{ .content }}</p>
+                    {{ end }}
+                </td>
+                {{end}} {{ end }}
+                <!--                <div class="c-row-fill"></div>-->
+            </tr>
+            {{ end }} {{ end }}
+
+
+        </tbody>
+    </table>
+    <!--    <div class="wrapper-table mobile">-->
+
+    <!--        <div class="more_feature_wrap text-center">-->
+    <!--            <a class="more_features" onclick="showAllTable()">More</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <div class="wrapper-table desktop">
+        <table class="desktop p-table ">
+            <thead>
+                <tr class="c-row head title" style="background-color: white">
+                    {{range $index, $element := .table_title}} {{if eq $index 0}}
+                    <th class="cell cell_header" style="background-color: #{{.color}}">
+                        {{ .content }}
+                    </th>
+                    {{else}}
+                    <th class="cell cell_header" style="background-color: #{{.color}}">
+                        {{ .content }}
+                    </th>
+                    {{end}} {{end}}
+                </tr>
+            </thead>
+            <tbody> {{ $title := 1 }} {{ range first 1 .tables }}
+
+                <tr class="c-row head ">
+                    {{ range.head }} {{if not .content}}
+                    <td class="cell ">
+                    </td>
+                    {{ end }} {{if .content}}
+                    <td class="cell " style="background-color: #{{.color}}">
+                        <p> {{ .content }}</p>
+                    </td>
+                    {{ end }} {{ end }}
+                </tr>
+
+                {{ range .rows}}
+                <tr class="c-row">
+                    {{ range $index, $element := .cells}} {{if eq $index 0}}
+                    <td class="cell ">
+                        {{ if .image }}
+                        <img alt="image" src="{{.image}}"> {{ else }}
+                        <p>{{ .content }}</p>
+                        {{ if .mark }}
+                        <div class="dropup align-self-center help">
+                            <div type="button" class="help__img">
+                                <img alt="image" src="/public/images/reader/icon/icon_prompt.svg">
+                            </div>
+                            <div class="dropdown-menu help__menu">
+                                <!-- <div class="help__menu__title">title{{ $title }}</div> -->
+                                <div class="help__menu__title">{{ .content }}</div>
+                                <div class="help__menu__content">{{ .mark }}</div>
+                            </div>
+                        </div>
+                        {{ end }} {{ end }}
+                    </td>
+                    {{ else }}
+                    <td class="cell">
+                        {{ if .image }}
+                        <img alt="image" src="{{.image}}"> {{ else }}
+                        <p>{{ .content }}</p>
+                        {{ end }}
+                    </td>
+                    {{end}} {{ end }}
+                    <!--                <div class="c-row-fill"></div>-->
+                </tr>
+                {{ end }} {{ end }} {{ range after 1 .tables }}
+                <tr class="c-row head more-row" style="display: none">
+                    {{ range.head }} {{if not .content}}
+                    <td class="cell ">
+                    </td>
+                    {{ end }} {{if .content}}
+                    <td class="cell " style="background-color: #{{.color}}">
+                        <p>{{ .content }}</p>
+                        <!--標題-->
+                        {{ if .mark }}
+                        <div class="dropup align-self-center help">
+                            <div type="button" class="help__img">
+                                <img alt="image" src="/public/images/reader/icon/icon_prompt.svg">
+                            </div>
+                            <div class="dropdown-menu help__menu">
+                                <!-- <div class="help__menu__title">{{ $title }}</div> -->
+                                <div class="help__menu__title">{{ .content }}</div>
+                                <div class="help__menu__content">{{ .mark }}</div>
+                            </div>
+                        </div>
+                        {{ end }}
+                    </td>
+                    {{ end }} {{ end }}
+                </tr>
+
+                {{ range .rows}}
+                <tr class="c-row more-row" style="display: none">
+
+                    {{ range $index, $element := .cells}} {{if eq $index 0}}
+                    <td class="cell ">
+                        {{ if .image }}
+                        <img alt="image" src="{{.image}}"> {{ else }}
+                        <p>{{ .content }}</p>
+                        {{ if .mark }}
+                        <div class="dropup align-self-center help">
+                            <div type="button" class="help__img">
+                                <img alt="image" src="/public/images/reader/icon/icon_prompt.svg">
+                            </div>
+                            <div class="dropdown-menu help__menu">
+                                <!-- <div class="help__menu__title">title{{ $title }}</div> -->
+                                <div class="help__menu__title">{{ .content }}</div>
+                                <div class="help__menu__content">{{ .mark }}</div>
+                            </div>
+                        </div>
+                        {{ end }} {{ end }}
+                    </td>
+                    {{ else }}
+                    <td class="cell">
+                        {{ if .image }}
+                        <img alt="image" src="{{.image}}"> {{ else }}
+                        <p>{{ .content }}</p>
+                        {{ end }}
+                    </td>
+                    {{end}} {{ end }}
+                    <!--                <div class="c-row-fill"></div>-->
+                </tr>
+                {{ end }} {{ end }}
+
+
+                <tr class="c-row action more-row" style="display: none">
+                    <td class="cell">
+                        <a onclick="showAllTable()"></a>
+                    </td>
+                    <td class="cell"><a class="btn_green-primary pricing_card_standard"> {{.button_text.lite}}</a></td>
+                    <td class="cell"><a class="btn_focus-primary pricing_card_standard"> {{.button_text.standard}}</a></td>
+                    <td class="cell"><a class="btn_general-primary pricing_card_standard"> {{.button_text.standard}}</a></td>
+
+                </tr>
+            </tbody>
+        </table>
+        <div class="more_feature_wrap text-center">
+            <a class="more_features" onclick="showAllTable()">{{ .more }}</a>
+        </div>
+    </div>
+</section>

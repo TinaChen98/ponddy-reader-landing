@@ -1,0 +1,146 @@
+<section class="intro">
+    <!--    <div class="background"></div>-->
+    <!--    <div class="after-gradient"></div>-->
+    <div class="container-fluid position-relative desktop" >
+        <div class="row  margin ">
+            <div class="col-md-12">
+                <div>{{.title |safeHTML}}</div>
+            </div>
+        </div>
+
+        <div class="row  margin setion1">
+            <div class="col-md-6 text-left setion1-text ml-auto">
+                <h2>{{.item1.title}} </h2>
+                <p>{{.item1.description}}</p>
+                <span class="remark">
+                    {{ range .item1.remark }}
+                        <a href="{{ .url }}" target="_black">
+                            <img src="/public/images/reader/icon/icon_point.svg">
+                            {{ .text }}
+                        </a>
+                    {{ end }}
+                </span>
+            </div>
+            <div class="col-md-6">
+                <img width="402px" height="423px" style="width: 70%" alt="01_pic_CreateMaterials"
+                     data-aos="zoom-in-left" data-aos-duration="1000"  data-aos-anchor-placement="center-bottom"
+                     data-src="https://ponddyreader-master.s3-us-west-1.amazonaws.com/landing/statics/media/01_pic_CreateMaterials.png">
+            </div>
+
+        </div>
+        <img class="trapezoid-right" alt="01_pic_BKG"
+             data-aos="fade-left" data-aos-duration="1000" data-aos-anchor-placement="top-bottom"
+             data-src="https://ponddyreader-master.s3-us-west-1.amazonaws.com/landing/statics/media/01_pic_BKG.svg">
+        <div class="row  margin setion2 position-relative">
+            <div class="col-md-8 text-center">
+                <img width="618px" height="552px" alt="02_pic_ConductOnline"
+                     data-aos="zoom-in-right" data-aos-duration="1000"  data-aos-anchor-placement="center-bottom"
+                     data-src="https://ponddyreader-master.s3-us-west-1.amazonaws.com/landing/statics/media/02_pic_ConductOnline.png">
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-6 text-left setion2-text ml-auto">
+                <h2>{{.item2.title}} </h2>
+                <p>{{.item2.description}}</p>
+                <span class="remark">
+                    {{ range .item2.remark }}
+                        <a href="{{ .url }}" target="_black">
+                            <img src="/public/images/reader/icon/icon_point.svg">
+                            {{ .text }}
+                        </a>
+                    {{ end }}
+                </span>
+            </div>
+        </div>
+        <img class="trapezoid-left"
+             data-aos-anchor-placement="top-bottom"
+             data-aos="fade-right"  data-aos-duration="15000" alt="02_pic_BKG"
+             data-src="https://ponddyreader-master.s3-us-west-1.amazonaws.com/landing/statics/media/02_pic_BKG.svg">
+        <div class="row  margin setion3">
+            <div class="col-md-6 text-left setion3-text ml-auto">
+                <h2>{{.item3.title}} </h2>
+                <p>{{.item3.description}}</p>
+                <span class="remark">
+                    {{ range .item3.remark }}
+                        <a href="{{ .url }}" target="_black">
+                            <img src="/public/images/reader/icon/icon_point.svg">
+                            {{ .text }}
+                        </a>
+                    {{ end }}
+                </span>
+            </div>
+            <div class="col-md-6">
+                <img width="440px" height="508px" alt="03_pic_Exercise"
+                     data-aos="zoom-in-left" data-aos-duration="1000"  data-aos-anchor-placement="center-bottom"
+                     data-src="https://ponddyreader-master.s3-us-west-1.amazonaws.com/landing/statics/media/03_pic_Exercise.png">
+            </div>
+        </div>
+        <img class="trapezoid-right-3" alt="03_pic_BKG"
+             data-aos="fade-left" data-aos-duration="1000"  data-aos-anchor-placement="top-bottom"
+             data-src="https://ponddyreader-master.s3-us-west-1.amazonaws.com/landing/statics/media/03_pic_BKG.svg">
+    </div>
+    <div class="mobile">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-12">
+                    <div>{{.title |safeHTML}}</div>
+                </div>
+                <div class="col-sm-12 mt-2">
+                    <div>
+                        <img data-aos="zoom-in-left" data-aos-duration="1000" data-aos-anchor-placement="top-center" alt="01_pic_CreateMaterials_part"
+                             data-src="https://ponddyreader-master.s3-us-west-1.amazonaws.com/landing/statics/media/mobile/01_pic_CreateMaterials_part.svg">
+                    </div>
+                    <div style="margin:1rem">
+                        <h2 style="text-align: center;">{{.item1.title}} </h2>
+                        <p style="text-align: center;">{{.item1.description}}</p>
+                    </div>
+                    <div class="remark">
+                        {{ range .item1.remark }}
+                            <a href="{{ .url }}" target="_black">
+                                <img src="/public/images/reader/icon/icon_point.svg">
+                                {{ .text }}
+                            </a>
+                        {{ end }}
+                    </div>
+                </div>
+                <div class="col-sm-12 mt-2">
+                    <div>
+                        <img data-aos="zoom-in-right" data-aos-duration="1000" data-aos-anchor-placement="top-center" alt="02_pic_ConductOnline_part"
+                             data-src="https://ponddyreader-master.s3-us-west-1.amazonaws.com/landing/statics/media/mobile/02_pic_ConductOnline_part.svg">
+                    </div>
+                    <div style="margin:1rem">
+                        <h2 style="text-align: center;">{{.item2.title}} </h2>
+                        <p style="text-align: center;">{{.item2.description}}</p>
+                    </div>
+                    <div class="remark">
+                        {{ range .item2.remark }}
+                            <a href="{{ .url }}" target="_black">
+                                <img src="/public/images/reader/icon/icon_point.svg">
+                                {{ .text }}
+                            </a>
+                        {{ end }}
+                    </div>
+                </div>
+                <div class="col-sm-12 mt-2">
+                    <div>
+                        <img  data-aos="zoom-in-left" data-aos-duration="1000" data-aos-anchor-placement="top-center" alt="03_pic_Exercise_part"
+                              data-src="https://ponddyreader-master.s3-us-west-1.amazonaws.com/landing/statics/media/mobile/03_pic_Exercise_part.svg">
+                    </div>
+                    <div style="margin:1rem">
+                        <h2 style="text-align: center;">{{.item3.title}} </h2>
+                        <p style="text-align: center;">{{.item3.description}}</p>
+                    </div>
+                    <div class="remark">
+                        {{ range .item3.remark }}
+                            <a href="{{ .url }}" target="_black">
+                                <img src="/public/images/reader/icon/icon_point.svg">
+                                {{ .text }}
+                            </a>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

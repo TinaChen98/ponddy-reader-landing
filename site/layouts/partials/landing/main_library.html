@@ -1,0 +1,18 @@
+<section class="library" class="lazy" data-bg="url('/public/images/reader/ponddylibrary.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center justify-content-center align-self-center">
+                <h1>{{.title}}</h1>
+                <p>{{.description}}</p>
+
+                <div class="col-10 cards">
+                    {{ range .example_content }}
+                    <a href="{{.link_url | safeHTML }}" target="_blank" class="content-card">
+                        <img data-src="{{.image }}" class="{{.class}} card-animate content-card" alt="card">
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

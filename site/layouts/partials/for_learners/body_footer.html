@@ -1,0 +1,89 @@
+<footer>
+    <div class="container">
+        <div class="row justify-content-center align-self-center no-gutters text-left">
+
+            <!--                        <div class="col-md-4">-->
+            <!--                            <div class="copyright">-->
+            <!--                                <a href="https://s3-us-west-2.amazonaws.com/ponddyreader-master/legal_documents/terms.html" target="_blank" class="">-->
+            <!--                                    Terms-->
+            <!--                                </a>-->
+            <!--                                |-->
+            <!--                                <a href="https://s3-us-west-2.amazonaws.com/ponddyreader-master/legal_documents/privacy.html" target="_blank">-->
+            <!--                                    Privacy-->
+            <!--                                </a>-->
+            <!--                                |-->
+            <!--                                <a href="https://s3-us-west-2.amazonaws.com/ponddyreader-master/legal_documents/copyright.html" target="_blank">-->
+            <!--                                    Report-->
+            <!--                                </a>-->
+            <!--                            </div>-->
+
+            <!--                        </div>-->
+            <div style="display: inline" class="col-md-12 text-center logo-setion">
+                {{ range .products_icon }}
+                <a href="{{ .url }}">
+                    <img data-src="{{ .image }}" class="product-logo" alt="{{ .alt }}">
+                </a>
+                {{ end }}
+            </div>
+            <div class="col-md-2 mr-2 ml-2">
+                <p class="title">{{ .footer_title.ponddy_reader }}</p>
+                {{ range .ponddy_reader }}
+                <a href="{{ .url }}">{{ .title }}</a><br> {{ end }}
+
+            </div>
+            <div class="col-md-2 mr-2  ml-2">
+                <p class="title">{{ .footer_title.other_products }}</p>
+                <a href="https://tutors.ponddy.com/" target="_blank">
+                    Ponddy Tutors
+                </a> <br>
+                <a href="https://stb.ponddy.com/landing/" target="_blank">
+                    Ponddy Smart Textbooks
+                </a>
+            </div>
+            <div class="desktop  col-md-2 mr-2 ml-2">
+                <p class="title">{{ .footer_title.site_language }}</p>
+                <a onclick="clickLanguage('en', 'for_learners')">English</a><br>
+                <a onclick="clickLanguage('zh', 'for_learners')">简体中文</a><br>
+                <a onclick="clickLanguage('zh-tw', 'for_learners')">繁體中文</a><br>
+                <a onclick="clickLanguage('ja', 'for_learners')">日本語</a><br>
+                <a onclick="clickLanguage('th', 'for_learners')">ภาษาไทย</a><br>
+                <a onclick="clickLanguage('id', 'for_learners')">bahasa Indonesia</a>
+            </div>
+            <div class="col-md-3  ml-2">
+                <p class="title">{{ .footer_title.contact_us }}</p>
+                <a href="tel:408-800-7798">408-800-7798</a>
+                <br>
+                <a href="mailto:support@ponddy-edu.com">support@ponddy-edu.com </a>
+                <br>
+                <a href="https://www.google.com.tw/maps/place/1550+The+Alameda+UNIT+310,+San+Jose,+CA+95126%E7%BE%8E%E5%9C%8B/@37.3352893,-121.9175913,17z/data=!3m1!4b1!4m5!3m4!1s0x808fcb68dd15443f:0x6e194cf29df0a30a!8m2!3d37.3352893!4d-121.9154026" target="_blank">1550 The Alameda, Ste 310 San Jose, CA 95126</a>
+            </div>
+            <div class="col-md-2  ml-2">
+                <p class="title">{{ .footer_title.follow_us }}</p>
+                <a class="mb-3" onclick="openUrl('https://www.instagram.com/accounts/login/?next=/ponddyeducation/')">
+                    Instagram</a><br>
+                <a onclick="openUrl('https://www.facebook.com/ponddyeducation/')">Facebook</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="language mobile">
+        <select onchange="location = this.value;">
+            <option value="/for_learners/">Site Language：English</option>
+            <option value="/cn/for_learners/">Site Language：简体中文</option>
+            <option value="/tw/for_learners/">Site Language：繁體中文</option>
+            <option value="/ja/for_learners/">Site Language：日本語</option>
+            <option value="/th/for_learners/">Site Language：ภาษาไทย</option>
+            <option value="/id/for_learners/">Site Language：bahasa Indonesia</option>
+
+        </select>
+    </div>
+    <div class="copyright mt-5">
+        <div class="permission">*AP® and Advanced Placement® are registered trademarks of the College Board. Used with permission.</div>
+        Copyright &copy; Ponddy Education Inc.| All Rights Reserved |
+        <a href="https://s3-us-west-1.amazonaws.com/ponddyreader-master/legal_documents/terms.html" target="_blank">Terms</a> | <a href="https://s3-us-west-1.amazonaws.com/ponddyreader-master/legal_documents/privacy.html" target="_blank">Privacy</a>
+    </div>
+</footer>
+
+<div class="scroll-up-arrow">
+    <img alt="scroll-up" data-src="{{.topup_arrow}}">
+</div>

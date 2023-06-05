@@ -1,0 +1,46 @@
+<section class="hero">
+    <div class="lazyload  desktop ">
+<!--        <div class="background"></div>-->
+
+        <!--    <div class="after-gradient"></div>-->
+        <div class="container">
+            <div class="row justify-content-start">
+                <div class="col-lg-8 ">
+                    <h1>Ponddy Reader</h1>
+
+                </div>
+                <div class="col-md-6 col-lg-5">
+<!--                    <img  data-src="/public/images/Reader_120x26.svg">-->
+                    <h2>{{.title}}</h2>
+                    <p>{{.description}}</p>
+
+                </div>
+            </div>
+            <div class=" register-setion">
+                <a class="hero-btn-white" href="https://auth.ponddy.com/auth/?client_id=2ecd2ce4-86a0-4e75-8548-e574d23f5731&redirect_uri=https://reader.ponddy.com/app/&next=%23reader-dashboard"> {{.signup_button}}</a>
+                <p class="no_credit text-center">*{{.no_credit}}*</p>
+            </div>
+            <div class="row justify-content-center align-self-center">
+                <div class="col-md-12 buttonGroup">
+
+                </div>
+
+                <div class="w-100"></div>
+
+                <div class="col-md-12 text-center">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile">
+        <img data-src='{{.background_url}}' alt="bgurl">
+        <div class="register-setion">
+            <a class="hero-btn-white" href="https://auth.ponddy.com/auth/?client_id=2ecd2ce4-86a0-4e75-8548-e574d23f5731&redirect_uri=https://reader.ponddy.com/app/&next=%23reader-dashboard"> {{.signup_button}}</a>
+            <p class="text-center">*{{.no_credit}}*</p>
+        </div>
+
+    </div>
+
+
+</section>

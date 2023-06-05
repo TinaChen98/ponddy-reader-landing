@@ -1,0 +1,91 @@
+<head>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="{{.site.author}}">
+    <meta name="title" content="{{.site.title}}" />
+    <meta name="keywords" content="{{.site.keywords}}" />
+    <meta name="description" content="{{.site.description}}" />
+    <meta name="generator" content="{{.site.generator}}" />
+    <meta name="copyright" content="{{.site.copyright}}" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="classification" content="{{.site.classification}}" />
+    <meta property="og:url" content="https://reader.ponddy.com/{{.site.language}}/pricing/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{.site.title}}" />
+    <meta property="og:description" content="{{.site.description}}" />
+    <meta property="og:image" content="https://reader.ponddy.com/public/images/reader/mac.png" />
+    <meta property="og:image:alt" content="{{.site.description}}" />
+    <meta property="fb:app_id" content="410567566143712" />
+    <link rel="stylesheet" href='{{"/public/css/for_teachers-dist.min.css"}}'>
+    <link rel="shortcut icon" href='{{"/public/images/reader/favicon.ico"}}' />
+    <title>{{.site.title}}</title>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KH5GG4Q');</script>
+    <!-- 20211014 Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-210075311-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-210075311-1');
+    </script>
+    <!-- End Google Analytics -->
+    <script>
+
+        var apiUrl = "https://reader-api.ponddy.com/api/v1";
+        var appUrl = "https://reader.ponddy.com/app/";
+        var authUrl = "https://auth.ponddy.com/auth/";
+        var clientId = "2ecd2ce4-86a0-4e75-8548-e574d23f5731";
+
+        if (window.location.href.match('reader-dev.ponddy.com')) {
+            apiUrl = "https://reader-api-dev.ponddy.com/api/v1";
+            appUrl = "https://reader-dev.ponddy.com/app/";
+            authUrl = "https://auth-dev.ponddy.com/auth/";
+            clientId = "fe020207-6e96-4c58-963fa34321042c26";
+        } else if (window.location.href.match('reader-staging.ponddy.com')) {
+            apiUrl = "https://reader-api-staging.ponddy.com/api/v1";
+            appUrl = "https://reader-staging.ponddy.com/app/";
+            authUrl = "https://auth-staging.ponddy.com/auth/";
+        }
+        const path = location.pathname.toLocaleLowerCase()
+        const languageHref = path.split('/')[1]
+        switch (languageHref) {
+            case 'cn':
+                authUrl = authUrl.replace('auth/',  'zh-hans' + '/auth/')
+                break
+            case 'tw':
+                authUrl = authUrl.replace('auth/',  'zh-hant' + '/auth/')
+                break
+            case 'ja':
+                authUrl = authUrl.replace('auth/',  'ja' + '/auth/')
+                break
+            case 'th':
+                authUrl = authUrl.replace('auth/',  'th' + '/auth/')
+                break
+            default:
+                authUrl = authUrl.replace('auth/',  'en' + '/auth/')
+                break
+        }
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+         fbq('init', '371867730034440');
+        fbq('track', 'PageView');
+    </script>
+    <script src='{{"/public/js/for_teachers-dist.min.js"}}'></script>
+    <noscript>
+        <img height="1" width="1" alt="fb"
+       src="https://www.facebook.com/tr?id=371867730034440&ev=PageView
+       &noscript=1"/>
+    </noscript>
+</head>

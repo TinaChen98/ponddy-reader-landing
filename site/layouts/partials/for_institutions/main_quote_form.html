@@ -1,0 +1,52 @@
+<section class="quote_form" id="quote_form">
+    <div class="container-fluid pr-0 pl-0">
+        <h1>{{.title}}</h1>
+        <p>{{.description}}</p>
+        <form role="form" id="contact_us_form">
+            <div class="row">
+                {{ range .form_type }}
+                    {{ if eq .name "note" }}
+                        <div class="col-md-12">
+                            <label for="{{.name}}">{{.type_name}}</label>
+                            <textarea class="form-control textarea" id="{{.id}}" name="{{.name}}" placeholder="{{.placeholder}}"></textarea>
+                        </div>
+                    {{ else }}
+                        {{ if or (eq .id "email") (eq .id "phone") }}
+                            <div class="col-md-12">
+                        {{ else }}
+                            <div class="col-md-6">
+                        {{ end }}
+
+                        <label for="{{.id}}">*{{.type_name}}</label>
+
+                        {{ if eq .name "roles" }}
+                        <select id="roles" name="roles" class="form-control" required>
+                            {{ range .role_item }}
+                                {{ if eq .value "" }}
+                                    <option disabled hidden selected value="{{.value}}">{{.option}}</option>
+                                {{else}}
+                                    <option value="{{.value}}">{{.option}}</option>
+                                {{ end }}
+                            {{ end }}
+                        </select>
+                        {{ else }}
+                            <input type="{{.type}}" class="form-control" placeholder="{{.placeholder}}" id="{{.id}}" name="{{.name}}" required />
+                        {{ end }}
+                        </div>
+                    {{ end }}
+                {{ end }}
+
+                <div class="col-md-12">
+                    <div class="form-row text-center">
+                        <div class="form-group col-12">
+                            <div class="g-recaptcha" data-sitekey="6Ldlp5IUAAAAAGHo3qu1fosvw2Oqjg-7v-zj0wQ7"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-warning">{{.submit}}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

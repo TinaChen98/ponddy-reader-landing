@@ -1,0 +1,47 @@
+
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <img src="{{.image}}" alt="from_ok">
+                <div class="close" data-dismiss="modal" aria-label="Close"><button>✕</button></div>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center">
+                    <h2>{{.title}}</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <p>{{.description}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="formErrorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered justify-content-center" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <img src="{{.error_image}}" alt="error_from_ok">
+                <div class="close" data-dismiss="modal" aria-label="Close"><button>✕</button></div>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center">
+                    <h2>{{.error}}</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <p>{{.error_description}} 
+                        <a href="mailto:support@ponddy-edu.com">support@ponddy-edu.com</a>
+                        {{ if .error_description_ja }}
+                        {{ .error_description_ja }}
+                        {{ end }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

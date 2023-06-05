@@ -1,0 +1,1027 @@
+<section class="resource_description">
+  <div class="container-fluid text-center header">
+    <div class="row justify-content-center align-content-center" style="height: 100%">
+      <div class="title" onclick="clickResourcesHome()">
+        <img alt="image" style="margin-right: 16px" data-src="/public/images/reader/icon/icon_forReasourcesHeader.png">
+        <h1 class='title'>{{.title_item_name}}</h1>
+
+      </div>
+    </div>
+  </div>
+  <div class="container main">
+    <div class="row">
+      <div class="col-md-4 menu desktop">
+        <ul>
+          <li class="menu_title" onclick="clickResourcesHome()">
+            {{.title_item_name}}
+          </li>
+          {{range .title_item}} {{ if eq .item "title_1" }}
+          <li class="user" onclick="clickMenu('user')">
+            {{.title}}
+          </li>
+          {{ end }} {{ if eq .item "title_2" }}
+          <li class="curricula active" onclick="clickMenu('curricula')">
+            {{.title}}
+          </li>
+          {{ end }} {{ if eq .item "title_3" }}
+          <li class="teaching" onclick="clickMenu('teaching')">
+            {{.title}}
+          </li>
+          {{ end }} {{ if eq .item "title_4" }}
+          <li class="self" onclick="clickMenu('self')">
+            {{.title}}
+          </li>
+          {{ end }} {{ if eq .item "title_5" }}
+          <li class="learning" onclick="clickMenu('learning')">
+            {{.title}}
+          </li>
+          {{ end }} {{ end }}
+        </ul>
+      </div>
+      <div class="col-md-8 col-sm-12 content">
+        <div class="section user">
+          <h1 class='title'>
+            {{range .title_item}} {{ if eq .item "title_1" }} {{.title}} {{ end }} {{ end }}
+          </h1>
+
+          <div id="myGroup">
+            {{range $index, $element := .card}}
+            <div class="title_collapse">
+              <h1>{{.title}}</h1>
+              <div class="collapse_btn pd-circle-plus collapsed" type="button" data-toggle="collapse" data-target="#content_{{$index}}" aria-expanded="false" aria-controls="content_{{$index}}" onclick="scrollToTop()">
+                <div class="circle">
+                  <div class="horizontal"></div>
+                  <div class="vertical"></div>
+                </div>
+              </div>
+            </div>
+            <div class="main_content collapse" data-parent="#myGroup" id="content_{{$index}}">
+              <div class="content_opacity">
+                {{range.subItem}}
+                <h2>
+                  {{.title}}
+                </h2>
+                <ul>
+                  {{range.list}} 
+                    {{if .description}}
+                      <li class="library">{{.title}}
+                        <p class="description">{{.description}}</p>
+                        {{ if .img }}
+                        <div class="img_descrtion">
+                          <img alt="image" data-src="{{.img}}">
+                        </div>
+                        {{end}}
+                      </li>
+                    {{else if .annotation}}
+                      <li class="library">
+                        <span class="annotation">{{.annotation}}</span>
+                      </li>
+                    {{else}}
+                      <li>{{.title}} {{ if .img }}
+                        <div class="img_descrtion">
+                          <img alt="image" data-src="{{.img}}">
+                        </div>
+                        {{end}}
+                      </li>
+                    {{end}} 
+                  {{end}}
+                </ul>
+                {{end}}
+              </div>
+
+            </div>
+            {{end}}
+          </div>
+        </div>
+
+
+        <div class="section curricula active">
+          <h1 class='title'>
+            {{range .title_item}} {{ if eq .item "title_2" }} {{.title}} {{ end }} {{ end }}
+          </h1>
+          <div class="language">
+            <div class='title'>
+              <span class='cn_font' onclick="clickResourceSimp()">Simplified</span>
+              <span class='tw_font' onclick="clickResourceTrad()">Traditional</span>
+            </div>
+          </div>
+          
+
+          <div class="simplified_section">
+            <div class="item">
+              <div class="item_title">
+                <h2>Standardized 标准教材</h2>
+                <a class="download" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/Standardized%20%E6%A0%87%E5%87%86%E6%95%99%E6%9D%90.zip" target="_black">
+                  <div class="download_icon"></div>
+                  <div>Download all</div>
+                </a>
+              </div>
+              <ul>
+                <li class="li-radius-top">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/%E5%85%88%E8%BF%9B%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_先進.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Leading Edge Series</div>
+                        <div class="sort">先进系列 ( 初中适用 )</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/%E6%A0%A1%E5%9B%AD%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_校園.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">School Series</div>
+                        <div class="sort">校园系列 ( 高中适用 )</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li class="li-radius-bottom">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/%E7%94%9F%E6%B4%BB%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_生活.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Work and Life Series</div>
+                        <div class="sort">生活系列 ( 大学，成人适用 )</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+            <div class="item">
+              <div class="item_title">
+                <h2>Thematic 主题教材</h2>
+                <a class="download" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/Thematic%20%E4%B8%BB%E9%A2%98%E6%95%99%E6%9D%90.zip" target="_black">
+                  <div class="download_icon"></div>
+                  <div>Download all</div>
+                </a>
+              </div>
+              <ul>
+                <li class="li-radius-top">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/%E4%B8%AD%E5%8D%8E%E6%96%87%E5%8C%96%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_中华文化.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Chinese Cultural Series</div>
+                        <div class="sort">中华文化系列</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/%E5%8F%A4%E6%96%87%E6%96%B0%E8%A7%A3%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_古文新解.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Classical Chinese Make Easy Series</div>
+                        <div class="sort">古文新解系列</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li class="li-radius-bottom">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/%E5%BD%93%E4%BB%A3%E4%B8%AD%E5%9B%BD%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">  
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_當代中國.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Modern China Series</div>
+                        <div class="sort">当代中国系列</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="item">
+              <div class="item_title">
+                <h2>Localized 在地化教材</h2>
+                <a class="download" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/Localized%20%E5%9C%A8%E5%9C%B0%E5%8C%96%E6%95%99%E6%9D%90.zip" target="_black">
+                  <div class="download_icon"></div>
+                  <div>Download all</div>
+                </a>
+              </div>
+              <ul>
+                <li class="li-radius-top">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/%E7%BE%8E%E5%9B%BD%E5%9C%A8%E5%9C%B0%E5%8C%96%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_美國在地化.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">US. Cultural Series</div>
+                        <div class="sort">美国在地化系列</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/%E6%96%87%E5%8C%96%E4%B8%8E%E5%AA%92%E4%BD%93%E6%95%99%E6%9D%90%EF%BC%887-9%E5%B9%B4%E7%BA%A7%EF%BC%89.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_DLI 文化與媒體.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Dual-Language Immersion</div>
+                        <div class="sort">文化与媒体教材 7-9 年级</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/%E6%B2%89%E6%B5%B8%E5%BC%8F%20AP%20%E6%95%99%E6%9D%90%EF%BC%889%2610%E5%B9%B4%E7%BA%A7%EF%BC%89.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_DLI 九、十年級.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Dual-Language Immersion</div>
+                        <div class="sort">沉浸式 AP 教材 9 & 10 年级</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/%E7%BE%8E%E5%9B%BD%E5%A4%A7%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%AD%E6%96%87%E5%B7%AE%E5%BC%82%E5%8C%96%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_美國大學.png">
+                      </div>
+                      <div>
+                        <div class="sort-title">US College Differentiated Instruction - Novice</div>
+                        <div class="sort">美国大学基础中文差异化教材</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li class="li-radius-bottom">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/%E7%BE%8E%E5%9B%BD%E9%A2%86%E8%88%AA%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_美國領航.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">The Language Flagship Series</div>
+                        <div class="sort">美国领航项目教材</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="item">
+              <div class="item_title">
+                <h2>Specific Purpose 专业教材</h2>
+                <a class="download" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/Specific%20Purpose%20%E4%B8%93%E4%B8%9A%E6%95%99%E6%9D%90.zip" target="_black">
+                  <div class="download_icon"></div>
+                  <div>Download all</div>
+                </a>
+              </div>
+              <ul>
+                <li class="li-radius-top">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/%E5%8C%BB%E7%96%97%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left"> 
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_醫療.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Medical Focus Series</div>
+                        <div class="sort">医疗系列</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li class="li-radius-bottom">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/%E6%B3%95%E5%BE%8B%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_法律.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Legal Focus Series</div>
+                        <div class="sort">法律系列</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="item">
+              <div class="item_title">
+                <h2>Foundation 基础教材</h2>
+                <a class="download" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/Foundation%20%E5%9F%BA%E7%A1%80%E6%95%99%E6%9D%90.zip" target="_black">
+                  <div class="download_icon"></div>
+                  <div>Download all</div>
+                </a>
+              </div>
+              <ul>
+                <li class="li-radius-top">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/%E9%83%A8%E9%A6%96%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left"> 
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_部首.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Radical Series</div>
+                        <div class="sort">部首系列</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li class="li-radius-bottom">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/%E6%8B%BC%E9%9F%B3%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left"> 
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_拼音.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Pinyin Series</div>
+                        <div class="sort">拼音系列</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="item">
+              <div class="item_title">
+                <h2>Proficiency Standards & Program 国际分级标准与体系</h2>
+                <a class="download" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/Proficiency%20Standards%20%26%20Program%20%E5%9B%BD%E9%99%85%E5%88%86%E7%BA%A7%E6%A0%87%E5%87%86%E4%B8%8E%E4%BD%93%E7%B3%BB.zip" target="_black">
+                  <div class="download_icon"></div>
+                  <div>Download all</div>
+                </a>
+              </div>
+              <ul>
+                <li class="li-radius-top">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/HSK%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left"> 
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_HSK.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">HSK Series</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/ACTFL%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left"> 
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_ACTFL.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">ACTFL Series</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/AP%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_AP.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">AP</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/Pathway%20to%20AP%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_pathway.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Pathway to AP</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li class="li-radius-bottom">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/simplified/IB%E7%B3%BB%E5%88%97%E7%BA%BF%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_IB.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">IB Series</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="traditional_section">
+
+            <div class="item">
+              <div class="item_title">
+                <h2>Standardized 標準教材</h2>
+                <a class="download" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/Standardized%20%E6%A8%99%E6%BA%96%E6%95%99%E6%9D%90.zip" target="_black">
+                  <div class="download_icon"></div>
+                  <div>Download all</div>
+                </a>
+              </div>
+              <ul>
+                <li class="li-radius-top">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/%E5%85%88%E9%80%B2%E7%B3%BB%E5%88%97%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_先進.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Leading Edge Series</div>
+                        <div class="sort">先進系列 ( 初中適用 )</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/%E6%A0%A1%E5%9C%92%E7%B3%BB%E5%88%97%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_校園.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">School Series</div>
+                        <div class="sort">校園系列 ( 高中適用 )</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li class="li-radius-bottom">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/%E7%94%9F%E6%B4%BB%E7%B3%BB%E5%88%97%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_生活.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Work and Life Series</div>
+                        <div class="sort">生活系列 ( 大學，成人適用 )</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="item">
+              <div class="item_title">
+                <h2>Thematic 主題教材</h2>
+                <a class="download" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/Thematic%20%E4%B8%BB%E9%A1%8C%E6%95%99%E6%9D%90.zip" target="_black">
+                  <div class="download_icon"></div>
+                  <div>Download all</div>
+                </a>
+              </div>
+              <ul>
+                <li class="li-radius-top">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/%E4%B8%AD%E8%8F%AF%E6%96%87%E5%8C%96%E7%B3%BB%E5%88%97%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_中华文化.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Chinese Cultural Series</div>
+                        <div class="sort">中華文化系列</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/%E5%8F%A4%E6%96%87%E6%96%B0%E8%A7%A3%E7%B3%BB%E5%88%97%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_古文新解.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Classical Chinese Make Easy Series</div>
+                        <div class="sort">古文新解系列</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li class="li-radius-bottom">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/%E7%95%B6%E4%BB%A3%E4%B8%AD%E5%9C%8B%E7%B3%BB%E5%88%97%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_blank">
+                    <div class="link-left">  
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_當代中國.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Modern China Series</div>
+                        <div class="sort">當代中國系列</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="item">
+              <div class="item_title">
+                <h2>Localized 在地化教材</h2>
+                <a class="download" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/Localized%20%E5%9C%A8%E5%9C%B0%E5%8C%96%E6%95%99%E6%9D%90.zip" target="_black">
+                  <div class="download_icon"></div>
+                  <div>Download all</div>
+                </a>
+              </div>
+              <ul>
+                <li class="li-radius-top">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/%E7%BE%8E%E5%9C%8B%E5%9C%A8%E5%9C%B0%E5%8C%96%E7%B3%BB%E5%88%97%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_black">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_美國在地化.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">US. Cultural Series</div>
+                        <div class="sort">美國在地化系列</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/%E6%96%87%E5%8C%96%E8%88%87%E5%AA%92%E9%AB%94%E6%95%99%E6%9D%90%EF%BC%887-9%E5%B9%B4%E7%B4%9A%EF%BC%89.pdf" target="_black">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_DLI 文化與媒體.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Dual-Language Immersion</div>
+                        <div class="sort">文化與媒體教材 7-9 年級</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/%E6%B2%89%E6%B5%B8%E5%BC%8F%20AP%20%E6%95%99%E6%9D%90%EF%BC%889%2610%E5%B9%B4%E7%B4%9A%EF%BC%89.pdf" target="_black">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_DLI 九、十年級.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Dual-Language Immersion</div>
+                        <div class="sort">沉浸式 AP 教材 9 & 10 年級</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/%E7%BE%8E%E5%9C%8B%E5%A4%A7%E5%AD%B8%E5%9F%BA%E7%A4%8E%E4%B8%AD%E6%96%87%E5%B7%AE%E7%95%B0%E5%8C%96%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_black">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_美國大學.png">
+                      </div>
+                      <div>
+                        <div class="sort-title">US College Differentiated Instruction - Novice</div>
+                        <div class="sort">美國大學基礎中文差異化教材</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li class="li-radius-bottom">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/%E7%BE%8E%E5%9C%8B%E9%A0%98%E8%88%AA%E7%B3%BB%E5%88%97%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_black">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_美國領航.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">The Language Flagship Series</div>
+                        <div class="sort">美國領航項目教材</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="item">
+              <div class="item_title">
+                <h2>Specific Purpose 專業教材</h2>
+                <a class="download" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/Specific%20Purpose%20%E5%B0%88%E6%A5%AD%E6%95%99%E6%9D%90.zip" target="_black">
+                  <div class="download_icon"></div>
+                  <div>Download all</div>
+                </a>
+              </div>
+              <ul>
+                <li class="li-radius-top">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/%E9%86%AB%E7%99%82%E7%B3%BB%E5%88%97%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_black">
+                    <div class="link-left"> 
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_醫療.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Medical Focus Series</div>
+                        <div class="sort">醫療系列</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li class="li-radius-top">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/%E6%B3%95%E5%BE%8B%E7%B3%BB%E5%88%97%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_black">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_法律.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Legal Focus Series</div>
+                        <div class="sort">法律系列</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- <div class="item">
+              <div class="item_title">
+                <h2>Foundation 基礎教材</h2>
+              </div>
+              <ul>
+                <li class="li-radius-no disabled">
+                  <a class="link_out">
+                    <div class="link-left"> 
+                      <div class="icon-bg icon-b">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_部首.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Radical Series (Coming Soon)</div>
+                        <div class="sort">部首系列</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div> -->
+            <div class="item">
+              <div class="item_title">
+                <h2>Proficiency Standards & Program 國際分級標準與體系</h2>
+                <a class="download" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/Proficiency%20Standards%20%26%20Program%20%E5%9C%8B%E9%9A%9B%E5%88%86%E7%B4%9A%E6%A8%99%E6%BA%96%E8%88%87%E9%AB%94%E7%B3%BB.zip" target="_black">
+                  <div class="download_icon"></div>
+                  <div>Download all</div>
+                </a>
+              </div>
+              <ul>
+                <li class="li-radius-top">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/TOCFL%E7%B3%BB%E5%88%97%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_black">
+                    <div class="link-left"> 
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_TOCFL.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">TOCFL Series</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/ACTFL%E7%B3%BB%E5%88%97%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_black">
+                    <div class="link-left"> 
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_ACTFL.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">ACTFL Series</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/AP%E7%B3%BB%E5%88%97%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_black">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_AP.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">AP</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li>
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/Pathway%20to%20AP%E7%B3%BB%E5%88%97%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_black">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_pathway.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">Pathway to AP</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+                <hr class="border-b">
+                <li class="li-radius-bottom">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Ready-to-use%20Curricula/traditional/IB%E7%B3%BB%E5%88%97%E7%B7%9A%E4%B8%8A%E6%95%99%E6%9D%90.pdf" target="_black">
+                    <div class="link-left">
+                      <div class="icon-bg">
+                        <img alt="image" class="icon" data-src="/public/images/reader/curricula/icon_IB.svg">
+                      </div>
+                      <div>
+                        <div class="sort-title">IB Series</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="section teaching">
+          <h1 class='title'>
+            {{range .title_item}} {{ if eq .item "title_3" }} {{.title}} {{ end }} {{ end }}
+          </h1>
+          <div>
+            <div class="language">
+              <div class='title'>
+                <span class='cn_font' onclick="clickResourceSimp()">Simplified</span>
+                <span class='tw_font' onclick="clickResourceTrad()">Traditional</span>
+              </div>
+            </div>
+            <div class="item simplified_section">
+              <ul>
+                <li class="li-radius-all">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/How%20to%20best%20use%20Reader%20for%20teaching/20220714_simplified_AI%E8%B5%8B%E8%83%BD-%E9%80%9F%E6%88%90%E6%95%99%E5%AD%A6%E6%8C%87%E5%8D%97.pdf" target="_blank">
+                    <div class="link-left">
+                      <div>
+                        <div class="sort-title">AI 赋能 - 速成教学指南</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>     
+            <div class="item traditional_section">
+              <ul>
+                <li class="li-radius-all">
+                  <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/How%20to%20best%20use%20Reader%20for%20teaching/20220331_tradutuibal_AI%E8%B3%A6%E8%83%BD-%E9%80%9F%E6%88%90%E6%95%99%E5%AD%B8%E6%8C%87%E5%8D%97.pdf" target="_black">
+                    <div class="link-left">
+                      <div>
+                        <div class="sort-title">AI 賦能 - 速成教學指南</div>
+                      </div>
+                    </div>
+                    <div class="icon_link">
+                      <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+        <div class="section self">
+          <h1 class='title'>
+            {{range .title_item}} {{ if eq .item "title_4" }} {{.title}} {{ end }} {{ end }}
+          </h1>
+          <div class="item">
+            <ul>
+              <li class="li-radius-all">
+                <a class="link_out" href="https://ponddy-reader-landing.oss-cn-beijing.aliyuncs.com/resources/Self-study%20Resources/Ponddy%2BTOCFL%2BTest%2BPrep%2BPacket.pdf" target="_blank">
+                  <div class="link-left">
+                    <div>
+                      <div class="sort-title">✣ TOCFL test prep packet</div>
+                    </div>
+                  </div>
+                  <div class="icon_link">
+                    <img alt="image" class="link_out-img" data-src="/public/images/reader/icon/icon_link_normal.png">
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="section learning">
+          {{range .title_item}} {{ if eq .item "title_5" }}
+          <h1 class='title'>
+            {{.title}}
+          </h1>
+          <div class="title_conten">
+            {{range .content}} {{ if .text_a }}
+            <a href="{{ .text_a.url }}" target="_blank">{{ .text_a.title }}</a> {{ else }}
+            <span>{{ .text }}</span> {{end}} {{end}}
+          </div>
+          {{ end }} {{ end }}
+
+          <!-- 其餘語系 card_learning：因排版不同，此欄位(card_learning)除了_index.tw.md及_index.cn.md以外其他md檔皆存在  -->
+          <div id="myGroup2" class="learning_lang learning_en">
+            {{range $index, $element := .card_learning}}
+            <div class="title_collapse">
+              <h1>{{.title}}</h1>
+              <div class="collapse_btn pd-circle-plus collapsed" type="button" data-toggle="collapse" data-target="#content_learning_{{$index}}" aria-expanded="false" aria-controls="content_learning_{{$index}}" onclick="scrollToTop()">
+                <div class="circle">
+                  <div class="horizontal"></div>
+                  <div class="vertical"></div>
+                </div>
+              </div>
+            </div>
+            <div class="main_content collapse" data-parent="#myGroup2" id="content_learning_{{$index}}">
+              <div class="content_opacity">
+                {{range.list}}
+                <ul>
+                  <li>
+                    {{.description}}
+                    <ul>
+                      {{range.description_list}}
+                      <li class="library">
+                        {{.title}}
+                        <p class="description">{{.description}}</p>
+                      </li>
+                      {{end}}
+                    </ul>
+                  </li>
+                  {{end}}
+              </div>
+            </div>
+            {{end}}
+          </div>
+
+          <!-- 簡/繁語系 card_learning_zh：因排版不同，此欄位(card_learning_zh)只存在_index.tw.md及_index.cn.md檔中  -->
+          <div id="myGroup3" class="learning_lang learning_zh">
+            {{range $index, $element := .card_learning_zh}}
+            <div class="title_collapse">
+              <h1>{{.title}}</h1>
+              <div class="collapse_btn pd-circle-plus collapsed" type="button" data-toggle="collapse" data-target="#content_learning_{{$index}}" aria-expanded="false" aria-controls="content_learning_{{$index}}" onclick="scrollToTop()">
+                <div class="circle">
+                  <div class="horizontal"></div>
+                  <div class="vertical"></div>
+                </div>
+              </div>
+            </div>
+            <div class="main_content collapse" data-parent="#myGroup3" id="content_learning_{{$index}}">
+              <div>{{.description}}</div>
+              <div class="content_opacity">
+                <ul>
+                  {{range.list}}
+                  <li>
+                    {{.description}}
+                  </li>
+                  {{end}}
+                </ul>
+              </div>
+              <div>{{.annotation}}</div>
+            </div>
+            {{end}}
+          </div>
+
+        </div>
+      </div>
+</section>

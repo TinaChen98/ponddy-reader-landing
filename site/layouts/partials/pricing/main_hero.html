@@ -1,0 +1,87 @@
+<section class="pricing">
+    <h1>{{ .title }}</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="card">
+                <div class="card_head">
+                    <div class="wrap">
+                        <h2 class="lite_color">{{.pricing_card.lite.title}}</h2>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <h2>{{.pricing_card.lite.price.main}}</h2>
+                    <p>{{.pricing_card.lite.content}}</p>
+                    <div class="content_description">{{.pricing_card.lite.description}}</div>
+                </div>
+                <div class="card_footer">
+                    <a class="btn_green-primary" id="pricing_card_lite">{{.pricing_card.lite.button_text}}</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_head">
+                    <div class="wrap">
+                        <h2 class="school_color">{{.pricing_card.school.title}}</h2>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <h2>{{.pricing_card.school.price.main}}
+                        <div class="annual-text">{{.pricing_card.school.price.period}}</div>
+                    </h2>
+                    <p>{{.pricing_card.school.content}}</p>
+                    <div class="content_description">{{.pricing_card.school.description}}</div>
+                </div>
+                <div class="card_footer">
+                    <a class="btn_focus-primary" id="pricing_card_school">{{.pricing_card.school.button_text}}</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_head">
+                    <div class="wrap">
+                        <h2 class="standard_color">{{.pricing_card.standard.title}}</h2>
+                    </div>
+                </div>
+                <div class="card_content">
+                    <h2 id="standard-pricing">{{.pricing_card.standard.price.main}}
+                        <div class="annual-text">/{{.pricing_card.standard.price.period}}</div>
+                    </h2>
+                    <p>{{.pricing_card.standard.content}}</p>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           {{.pricing_card.standard.billed}}
+                       </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="period-dropdown">
+
+                            <div class="dropdown-item">
+                                <span class="period"> {{.pricing_card.standard.price.period_month}}</span>
+                                <span class="price">$9.99</span>
+                            </div>
+                            <div class="dropdown-item">
+                                <span class="period">{{.pricing_card.standard.price.period_semi}}</span>
+                                <span class="price">$54.99</span>
+                            </div>
+                            <div class="dropdown-item">
+                                <span class="period">{{.pricing_card.standard.price.period}}</span>
+                                <span class="price">$99.99</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="content_description"> {{.pricing_card.standard.description}}</div>
+                </div>
+                <div class="card_footer">
+                    <a class="btn_general-primary" id="pricing_card_standard"> {{.pricing_card.standard.button_text}}</a>
+                </div>
+            </div>
+            <div class="mobile card " style="visibility: hidden;min-height: 0;margin: 0 32px">
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--<section class="feature">-->
+<!--    <h1>Feature</h1>-->
+<!--    <div class="container">-->
+<!--        <div></div>-->
+<!--    </div>-->
+<!--</section>-->
